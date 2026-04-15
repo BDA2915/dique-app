@@ -7,36 +7,30 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, -apple-system, sans-serif; background: #f5f4f0; color: #1a1a18; min-height: 100vh; }
-
     .header { background: #1a1a18; color: #f5f4f0; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
     .header-title { font-size: 14px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
     .header-right { display: flex; align-items: center; gap: 10px; }
     .editor-badge { background: #639922; color: #EAF3DE; font-size: 11px; padding: 3px 9px; border-radius: 4px; }
     .btn-header { background: transparent; border: 0.5px solid rgba(255,255,255,0.3); color: #f5f4f0; font-size: 12px; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-family: inherit; }
     .btn-header:hover { background: rgba(255,255,255,0.1); }
-
     .nav { background: #fff; border-bottom: 0.5px solid #dddcd6; display: flex; padding: 0 16px; overflow-x: auto; }
     .nav-btn { padding: 10px 16px; font-size: 13px; background: none; border: none; cursor: pointer; color: #888780; border-bottom: 2px solid transparent; font-family: inherit; white-space: nowrap; transition: color 0.15s; }
     .nav-btn.active { color: #1a1a18; border-bottom-color: #1a1a18; font-weight: 500; }
-
     .main { padding: 16px; max-width: 1100px; margin: 0 auto; }
-
     .card { background: #fff; border-radius: 10px; border: 0.5px solid #dddcd6; padding: 16px; margin-bottom: 14px; }
-
+    .card-title { font-size: 14px; font-weight: 500; margin-bottom: 14px; }
     .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
     @media (max-width: 600px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
     .stat-card { background: #f5f4f0; border-radius: 8px; padding: 11px 13px; }
     .stat-label { font-size: 10px; color: #888780; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
     .stat-value { font-size: 22px; font-weight: 500; }
     .stat-sub { font-size: 11px; color: #888780; margin-top: 2px; }
-
     .prog-wrap { background: #f5f4f0; border-radius: 8px; padding: 11px 13px; margin-bottom: 14px; }
     .prog-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
     .prog-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #888780; }
     .prog-pct { font-size: 14px; font-weight: 500; }
     .prog-bar { height: 7px; background: #dddcd6; border-radius: 4px; overflow: hidden; }
     .prog-fill { height: 100%; background: #639922; border-radius: 4px; transition: width 0.4s; }
-
     .ship-wrap { background: #f5f4f0; border-radius: 10px; padding: 13px; margin-bottom: 14px; border: 0.5px solid #dddcd6; overflow-x: auto; }
     .ship-lbl { font-size: 9px; color: #888780; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 9px; }
     .deck-row { display: flex; gap: 4px; align-items: stretch; margin-bottom: 4px; min-width: fit-content; }
@@ -46,7 +40,6 @@
     .block:hover { transform: scale(1.05); }
     .block.sel { outline: 2.5px solid #1a1a18; outline-offset: 1px; }
     .block-id { font-size: 10px; font-weight: 500; }
-    .block-pct { font-size: 8px; opacity: 0.75; }
     .mini-bar { width: 70%; height: 2px; background: rgba(0,0,0,0.15); border-radius: 1px; overflow: hidden; margin-top: 2px; }
     .mini-fill { height: 100%; background: rgba(0,0,0,0.4); border-radius: 1px; }
     .bow-block { width: 48px; flex-shrink: 0; border-radius: 6px; padding: 5px; cursor: pointer; border: 1.5px solid; text-align: center; min-height: 60px; transition: transform 0.12s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
@@ -56,7 +49,6 @@
     .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 9px; }
     .leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #888780; }
     .leg-dot { width: 10px; height: 10px; border-radius: 2px; border: 1px solid; flex-shrink: 0; }
-
     .panel { background: #fff; border: 0.5px solid #c0bfb8; border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
     .panel-head { padding: 12px 14px; border-bottom: 0.5px solid #dddcd6; }
     .panel-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
@@ -68,7 +60,6 @@
     .subtab { padding: 8px 13px; font-size: 12px; background: none; border: none; cursor: pointer; color: #888780; border-bottom: 2px solid transparent; margin-bottom: -0.5px; font-family: inherit; white-space: nowrap; }
     .subtab.active { color: #1a1a18; border-bottom-color: #1a1a18; font-weight: 500; }
     .panel-body { padding: 14px; }
-
     .task-row { display: flex; align-items: center; gap: 10px; padding: 9px 10px; background: #f5f4f0; border-radius: 8px; margin-bottom: 5px; border: 0.5px solid #dddcd6; }
     .task-info { flex: 1; min-width: 0; }
     .task-name { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
@@ -79,64 +70,72 @@
     .task-pct { font-size: 10px; color: #888780; text-align: right; }
     .del-btn { background: none; border: none; cursor: pointer; color: #b8b7b0; font-size: 18px; padding: 0 3px; line-height: 1; flex-shrink: 0; }
     .del-btn:hover { color: #E24B4A; }
-
     .form-group { margin-bottom: 10px; }
     .form-label { font-size: 10px; color: #888780; margin-bottom: 3px; display: block; text-transform: uppercase; letter-spacing: 0.06em; }
     .form-input { width: 100%; font-size: 13px; padding: 8px 10px; border: 0.5px solid #c0bfb8; border-radius: 8px; background: #fff; color: #1a1a18; font-family: inherit; }
     .form-input:focus { outline: none; border-color: #639922; box-shadow: 0 0 0 2px rgba(99,153,34,0.15); }
     select.form-input { cursor: pointer; }
     .form-grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
-    @media (max-width: 480px) { .form-grid-2 { grid-template-columns: 1fr; } }
+    .form-grid-3 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; }
+    @media (max-width: 480px) { .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; } }
     .btn-primary { display: block; width: 100%; padding: 10px; font-size: 13px; font-weight: 500; background: #3B6D11; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; margin-top: 6px; }
     .btn-primary:hover { background: #27500A; }
     .btn-secondary { background: transparent; border: 0.5px solid #c0bfb8; color: #1a1a18; font-size: 12px; padding: 7px 16px; border-radius: 8px; cursor: pointer; font-family: inherit; }
     .btn-secondary:hover { background: #f5f4f0; }
-
     .log-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: #f5f4f0; border-radius: 8px; margin-bottom: 5px; border: 0.5px solid #dddcd6; }
     .log-info { flex: 1; min-width: 0; }
     .log-name { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .log-sub { font-size: 10px; color: #888780; margin-top: 2px; }
     .log-qty { width: 72px; font-size: 13px; padding: 6px 8px; border: 0.5px solid #c0bfb8; border-radius: 6px; background: #fff; font-family: inherit; text-align: right; flex-shrink: 0; }
     .log-qty:focus { outline: none; border-color: #639922; }
-
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 12px; }
     th { text-align: left; padding: 7px 10px; color: #888780; font-weight: 400; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 0.5px solid #dddcd6; white-space: nowrap; }
-    td { padding: 9px 10px; border-bottom: 0.5px solid #dddcd6; color: #1a1a18; }
+    td { padding: 9px 10px; border-bottom: 0.5px solid #dddcd6; color: #1a1a18; vertical-align: middle; }
     tr:last-child td { border-bottom: none; }
     .pcell { display: flex; align-items: center; gap: 8px; }
     .pbar { flex: 1; height: 4px; background: #dddcd6; border-radius: 2px; overflow: hidden; min-width: 60px; }
     .pfill { height: 100%; background: #639922; border-radius: 2px; }
     .pnum { font-size: 11px; color: #888780; min-width: 32px; text-align: right; }
-
     .chart-bars { display: flex; gap: 3px; align-items: flex-end; height: 80px; margin-bottom: 4px; }
     .chart-bar { flex: 1; border-radius: 2px 2px 0 0; background: #97C459; min-width: 6px; }
     .chart-dates { display: flex; gap: 3px; }
     .chart-date { flex: 1; font-size: 8px; color: #888780; text-align: center; overflow: hidden; white-space: nowrap; }
-
     .proj-box { background: #E6F1FB; border: 0.5px solid #B5D4F4; border-radius: 8px; padding: 12px 14px; margin-bottom: 14px; }
     .proj-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #0C447C; margin-bottom: 3px; }
     .proj-val { font-size: 16px; font-weight: 500; color: #185FA5; }
-
     .toast { padding: 10px 14px; border-radius: 8px; font-size: 12px; margin-bottom: 12px; }
-    .toast.ok { background: #27500A; color: #EAF3DE; }
+    .toast.ok  { background: #27500A; color: #EAF3DE; }
     .toast.err { background: #791F1F; color: #FCEBEB; }
-
     .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 20px; }
     .modal { background: #fff; border-radius: 12px; padding: 24px; width: 100%; max-width: 360px; border: 0.5px solid #dddcd6; }
     .modal-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
     .modal-sub { font-size: 12px; color: #888780; margin-bottom: 16px; }
-
     .empty { text-align: center; padding: 20px; font-size: 12px; color: #888780; border: 0.5px dashed #c0bfb8; border-radius: 8px; }
     .loading { text-align: center; padding: 60px 20px; color: #888780; font-size: 14px; }
     .error-box { background: #FCEBEB; border: 0.5px solid #F7C1C1; border-radius: 8px; padding: 14px; margin: 20px; font-size: 13px; color: #501313; line-height: 1.6; }
-
     .hist-group { margin-bottom: 14px; }
     .hist-header { font-size: 11px; font-weight: 500; color: #888780; margin-bottom: 5px; display: flex; justify-content: space-between; padding-bottom: 4px; border-bottom: 0.5px solid #dddcd6; }
-    .hist-row { display: flex; justify-content: space-between; padding: 4px 0; font-size: 12px; color: #888780; border-bottom: 0.5px solid #f0efd8; }
+    .hist-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; font-size: 12px; color: #888780; border-bottom: 0.5px solid #f0efd8; }
     .hist-row:last-child { border-bottom: none; }
-
     .section-title { font-size: 10px; color: #888780; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+    /* Elementos */
+    .elem-card { background: #f5f4f0; border: 0.5px solid #dddcd6; border-radius: 8px; padding: 12px 13px; margin-bottom: 8px; }
+    .elem-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+    .elem-name { font-size: 13px; font-weight: 500; }
+    .elem-nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 8px; }
+    @media (max-width: 500px) { .elem-nums { grid-template-columns: repeat(2, 1fr); } }
+    .en-item { text-align: center; background: #fff; border-radius: 6px; padding: 6px 4px; border: 0.5px solid #dddcd6; }
+    .en-lbl { font-size: 9px; color: #888780; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; }
+    .en-val { font-size: 16px; font-weight: 500; }
+    .en-sub { font-size: 9px; color: #888780; }
+    .dbl-bar { display: flex; height: 5px; border-radius: 3px; background: #dddcd6; overflow: hidden; }
+    .dbl-prod { background: #97C459; transition: width 0.4s; }
+    .stock-ok   { background: #EAF3DE; border: 0.5px solid #C0DD97; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #27500A; white-space: nowrap; }
+    .stock-warn { background: #FAEEDA; border: 0.5px solid #FAC775; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #633806; white-space: nowrap; }
+    .stock-none { background: #f5f4f0; border: 0.5px solid #dddcd6; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #888780; white-space: nowrap; }
+    .tab-panel { background: #fff; border: 0.5px solid #dddcd6; border-radius: 0 0 10px 10px; padding: 14px; margin-bottom: 14px; }
+    .tab-header { background: #fff; border-radius: 8px 8px 0 0; border: 0.5px solid #dddcd6; border-bottom: none; display: flex; overflow-x: auto; }
   </style>
 </head>
 <body>
@@ -160,12 +159,11 @@
 <div id="root"><div class="loading">Conectando con la base de datos...</div></div>
 
 <script type="module">
-import { initializeApp }    from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
 import { getFirestore, doc, getDoc, setDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
 /* ================================================================
    CONFIGURACIÓN — COMPLETAR CON TUS DATOS DE FIREBASE
-   (ver INSTRUCCIONES.md para saber cómo obtener estos valores)
 ================================================================ */
 const FIREBASE_CONFIG = {
   apiKey:            "AIzaSyCW8ub-1csVMipPVYNDGGL_lRlPikK-x98",
@@ -183,683 +181,576 @@ const STATUS = {
   wip:  { label:'En proceso', bg:'#FAC775', bd:'#BA7517', tx:'#412402' },
   done: { label:'Terminado',  bg:'#C0DD97', bd:'#3B6D11', tx:'#173404' }
 };
-
 const DEFAULT_BLOCKS = [
   'F01B','F02B','F03B','F04B','F05B','F06B','F07B','F08B',
   'F01E','F02E','F03E','F04E','F05E','F06E','F07E','F08E',
   'VOPP','VOPR'
 ];
 
-// App state
-let db;
-let blockList  = [];
-let blockData  = {};
-let isEditor   = localStorage.getItem('dique_editor') === 'true';
+// ── Estado ────────────────────────────────────────────────────────
+let db, blockList=[], blockData={}, elements=[];
+let isEditor   = localStorage.getItem('dique_editor')==='true';
 let view       = 'mapa';
 let selBlock   = null;
 let bTab       = 'tasks';
 let cargarBId  = '';
+let eTab       = 'stock';
 let toastInfo  = null;
 let renderPending = false;
 
-// ── Helpers ──────────────────────────────────────────────────────
-const todayStr = () => new Date().toISOString().slice(0, 10);
+// ── Helpers genéricos ─────────────────────────────────────────────
+const todayStr = () => new Date().toISOString().slice(0,10);
 const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-const tDone = t => (t.logs||[]).reduce((s,l)=>s+(+l.qty||0), 0);
-const tPct  = t => t.total ? Math.min(100, Math.round(tDone(t)/t.total*100)) : 0;
 
+// ── Helpers bloques ───────────────────────────────────────────────
+const tDone = t => (t.logs||[]).reduce((s,l)=>s+(+l.qty||0),0);
+const tPct  = t => t.total ? Math.min(100,Math.round(tDone(t)/t.total*100)) : 0;
 function bProg(id) {
-  const b = blockData[id] || { status:'none', tasks:[] };
-  if (!b.tasks?.length) return { done:0, total:0, pct: b.status==='done'?100:0 };
-  let d=0, t=0;
-  b.tasks.forEach(tk => { d+=tDone(tk); t+=(+tk.total||0); });
-  return { done:d, total:t, pct: t ? Math.round(d/t*100) : 0 };
+  const b=blockData[id]||{status:'none',tasks:[]};
+  if(!b.tasks?.length) return {done:0,total:0,pct:b.status==='done'?100:0};
+  let d=0,t=0; b.tasks.forEach(tk=>{d+=tDone(tk);t+=(+tk.total||0);}); 
+  return {done:d,total:t,pct:t?Math.round(d/t*100):0};
 }
-
 function gProg() {
-  let d=0, t=0;
-  blockList.forEach(id => { const p=bProg(id); d+=p.done; t+=p.total; });
-  return { done:d, total:t, pct: t ? Math.round(d/t*100) : 0 };
+  let d=0,t=0; blockList.forEach(id=>{const p=bProg(id);d+=p.done;t+=p.total;});
+  return {done:d,total:t,pct:t?Math.round(d/t*100):0};
 }
-
 function dailyData() {
-  const map = {};
-  blockList.forEach(id => {
-    (blockData[id]?.tasks||[]).forEach(tk => {
-      (tk.logs||[]).forEach(l => { map[l.date] = (map[l.date]||0)+(+l.qty||0); });
-    });
-  });
+  const map={};
+  blockList.forEach(id=>{(blockData[id]?.tasks||[]).forEach(tk=>{(tk.logs||[]).forEach(l=>{map[l.date]=(map[l.date]||0)+(+l.qty||0);});});});
   return Object.entries(map).sort(([a],[b])=>a.localeCompare(b));
 }
-
 function todayUnits() {
-  const td = todayStr(); let u=0;
-  blockList.forEach(id => {
-    (blockData[id]?.tasks||[]).forEach(tk => {
-      (tk.logs||[]).forEach(l => { if(l.date===td) u+=(+l.qty||0); });
-    });
-  });
+  const td=todayStr();let u=0;
+  blockList.forEach(id=>{(blockData[id]?.tasks||[]).forEach(tk=>{(tk.logs||[]).forEach(l=>{if(l.date===td)u+=(+l.qty||0);});});});
   return u;
 }
-
-function avgDaily() {
-  const d=dailyData();
-  return d.length ? Math.round(gProg().done/d.length) : 0;
-}
-
-function projFinish() {
-  const daily=dailyData();
-  if (daily.length<2) return null;
-  const gp=gProg();
-  if (!gp.total || gp.done>=gp.total) return null;
-  const avg=gp.done/daily.length;
-  if (!avg) return null;
+function avgDaily(){const d=dailyData();return d.length?Math.round(gProg().done/d.length):0;}
+function projFinish(){
+  const daily=dailyData();if(daily.length<2)return null;
+  const gp=gProg();if(!gp.total||gp.done>=gp.total)return null;
+  const avg=gp.done/daily.length;if(!avg)return null;
   const rem=Math.ceil((gp.total-gp.done)/avg);
-  const d=new Date(); let added=0;
-  while (added<rem) { d.setDate(d.getDate()+1); const w=d.getDay(); if(w!==0&&w!==6) added++; }
+  const d=new Date();let added=0;
+  while(added<rem){d.setDate(d.getDate()+1);const w=d.getDay();if(w!==0&&w!==6)added++;}
   return d.toLocaleDateString('es-AR',{day:'numeric',month:'long',year:'numeric'});
 }
 
-// ── Firebase ─────────────────────────────────────────────────────
-async function init() {
+// ── Helpers elementos ─────────────────────────────────────────────
+const eProd     = e => (e.logs||[]).reduce((s,l)=>s+(+l.qty||0),0);
+const eAssigned = e => (e.assignments||[]).reduce((s,a)=>s+(+a.qty||0),0);
+const eAvail    = e => Math.max(0,eProd(e)-eAssigned(e));
+const ePct      = e => e.total?Math.min(100,Math.round(eProd(e)/e.total*100)):0;
+function blockAssigned(blockId,eid){
+  const e=elements.find(x=>x.id===eid);
+  return e?(e.assignments||[]).filter(a=>a.blockId===blockId).reduce((s,a)=>s+(+a.qty||0),0):0;
+}
+function elemGlobalProg(){
+  let prod=0,total=0;elements.forEach(e=>{prod+=eProd(e);total+=(+e.total||0);});
+  return{prod,total,pct:total?Math.round(prod/total*100):0};
+}
+
+// ── Firebase ──────────────────────────────────────────────────────
+async function init(){
   let app;
-  try { app = initializeApp(FIREBASE_CONFIG); }
-  catch(e) {
-    document.getElementById('root').innerHTML =
-      `<div class="error-box"><strong>Error de configuración</strong><br>Verificá que los datos de Firebase en el archivo index.html sean correctos.<br><br>Detalle: ${e.message}</div>`;
-    return;
+  try{app=initializeApp(FIREBASE_CONFIG);}
+  catch(e){document.getElementById('root').innerHTML=`<div class="error-box"><strong>Error de configuración</strong><br>Verificá los datos de Firebase.<br><br>${e.message}</div>`;return;}
+  db=getFirestore(app);
+  try{
+    const cfgSnap=await getDoc(doc(db,'config','settings'));
+    if(cfgSnap.exists()&&cfgSnap.data().blocks?.length){blockList=cfgSnap.data().blocks;}
+    else{blockList=[...DEFAULT_BLOCKS];await setDoc(doc(db,'config','settings'),{blocks:blockList});}
+  }catch(e){
+    document.getElementById('root').innerHTML=`<div class="error-box"><strong>No se pudo conectar con Firebase</strong><br>Revisá las reglas de Firestore.<br><br>${e.message}</div>`;return;
   }
-  db = getFirestore(app);
-
-  try {
-    const cfgSnap = await getDoc(doc(db,'config','settings'));
-    if (cfgSnap.exists() && cfgSnap.data().blocks?.length) {
-      blockList = cfgSnap.data().blocks;
-    } else {
-      blockList = [...DEFAULT_BLOCKS];
-      await setDoc(doc(db,'config','settings'), { blocks: blockList });
-    }
-  } catch(e) {
-    document.getElementById('root').innerHTML =
-      `<div class="error-box"><strong>No se pudo conectar con Firebase</strong><br>Revisá las reglas de seguridad de Firestore (deben permitir lectura/escritura) y tu configuración.<br><br>Detalle: ${e.message}</div>`;
-    return;
-  }
-
-  // Subscribe to all block documents (real-time)
-  let loaded = 0;
-  blockList.forEach(id => {
-    onSnapshot(doc(db,'blocks',id), snap => {
-      blockData[id] = snap.exists() ? snap.data() : { status:'none', tasks:[] };
-      loaded++;
-      scheduleRender();
-    });
+  blockList.forEach(id=>{
+    onSnapshot(doc(db,'blocks',id),snap=>{blockData[id]=snap.exists()?snap.data():{status:'none',tasks:[]};scheduleRender();});
   });
+  onSnapshot(doc(db,'config','elements'),snap=>{elements=snap.exists()?(snap.data().list||[]):[];scheduleRender();});
 }
+async function saveBlock(id){await setDoc(doc(db,'blocks',id),blockData[id]);}
+async function saveConfig(){await setDoc(doc(db,'config','settings'),{blocks:blockList});}
+async function saveElements(){await setDoc(doc(db,'config','elements'),{list:elements});}
+function scheduleRender(){if(renderPending)return;renderPending=true;setTimeout(()=>{renderPending=false;render();},60);}
 
-async function saveBlock(id) {
-  await setDoc(doc(db,'blocks',id), blockData[id]);
+// ── Auth ──────────────────────────────────────────────────────────
+function tryLogin(){
+  const v=document.getElementById('pwd-input').value;
+  if(v===EDITOR_PASSWORD){isEditor=true;localStorage.setItem('dique_editor','true');closeLogin();render();}
+  else document.getElementById('login-err').style.display='block';
 }
+function logout(){isEditor=false;localStorage.removeItem('dique_editor');render();}
+function openLogin(){document.getElementById('modal-login').style.display='block';setTimeout(()=>document.getElementById('pwd-input').focus(),80);}
+function closeLogin(){document.getElementById('modal-login').style.display='none';}
+function toast(msg,type='ok'){toastInfo={msg,type};render();setTimeout(()=>{toastInfo=null;render();},3000);}
 
-async function saveConfig() {
-  await setDoc(doc(db,'config','settings'), { blocks: blockList });
+// ── Acciones bloques ──────────────────────────────────────────────
+function setNav(v){view=v;if(v!=='mapa')selBlock=null;render();}
+function selBlockFn(id){selBlock=selBlock===id?null:id;bTab='tasks';render();}
+function closePanel(){selBlock=null;render();}
+function setBTab(t){bTab=t;render();}
+async function setStatus(id,s){if(!blockData[id])blockData[id]={status:'none',tasks:[]};blockData[id].status=s;await saveBlock(id);}
+async function addTask(){
+  const name=document.getElementById('nt-name')?.value.trim();
+  const total=parseInt(document.getElementById('nt-total')?.value);
+  if(!name||!(total>0)||!selBlock)return toast('Completá nombre y cantidad total','err');
+  if(!blockData[selBlock])blockData[selBlock]={status:'none',tasks:[]};
+  if(!blockData[selBlock].tasks)blockData[selBlock].tasks=[];
+  blockData[selBlock].tasks.push({id:Date.now(),name,total,logs:[]});
+  await saveBlock(selBlock);bTab='tasks';toast('Tarea agregada');
 }
-
-// Debounced render to avoid rapid re-renders at startup
-function scheduleRender() {
-  if (renderPending) return;
-  renderPending = true;
-  setTimeout(() => { renderPending=false; render(); }, 60);
+async function deleteTask(id,tid){
+  if(!confirm('¿Eliminar esta tarea y todos sus registros?'))return;
+  blockData[id].tasks=blockData[id].tasks.filter(t=>t.id!==tid);
+  await saveBlock(id);toast('Tarea eliminada');
 }
-
-// ── Auth ─────────────────────────────────────────────────────────
-function tryLogin() {
-  const v = document.getElementById('pwd-input').value;
-  if (v === EDITOR_PASSWORD) {
-    isEditor = true;
-    localStorage.setItem('dique_editor','true');
-    closeLogin();
-    render();
-  } else {
-    document.getElementById('login-err').style.display = 'block';
-  }
+async function submitLog(){
+  if(!selBlock)return;
+  const date=document.getElementById('log-date')?.value||todayStr();
+  const b=blockData[selBlock];let any=false;
+  b.tasks.forEach(t=>{
+    const q=parseInt(document.getElementById('lq-'+t.id)?.value||0);
+    if(q>0){if(!t.logs)t.logs=[];const ex=t.logs.find(l=>l.date===date);if(ex)ex.qty=(+ex.qty||0)+q;else{t.logs.push({date,qty:q});t.logs.sort((a,b)=>a.date.localeCompare(b.date));}any=true;}
+  });
+  if(!any)return toast('Ingresá al menos una cantidad mayor a 0','err');
+  await saveBlock(selBlock);bTab='tasks';toast('Avance registrado');
 }
-function logout() { isEditor=false; localStorage.removeItem('dique_editor'); render(); }
-function openLogin() {
-  document.getElementById('modal-login').style.display='block';
-  setTimeout(()=>document.getElementById('pwd-input').focus(),80);
-}
-function closeLogin() { document.getElementById('modal-login').style.display='none'; }
-
-// ── Toast ─────────────────────────────────────────────────────────
-function toast(msg, type='ok') {
-  toastInfo={msg,type}; render();
-  setTimeout(()=>{ toastInfo=null; render(); }, 3000);
-}
-
-// ── Actions ───────────────────────────────────────────────────────
-function setNav(v) { view=v; if(v!=='mapa') selBlock=null; render(); }
-function selBlockFn(id) { selBlock = selBlock===id ? null : id; bTab='tasks'; render(); }
-function closePanel() { selBlock=null; render(); }
-function setBTab(t) { bTab=t; render(); }
-
-async function setStatus(id, s) {
-  if (!blockData[id]) blockData[id]={status:'none',tasks:[]};
-  blockData[id].status = s;
-  await saveBlock(id);
-}
-
-async function addTask() {
-  const name  = document.getElementById('nt-name')?.value.trim();
-  const total = parseInt(document.getElementById('nt-total')?.value);
-  if (!name || !(total>0) || !selBlock) return toast('Completá nombre y cantidad total','err');
-  if (!blockData[selBlock]) blockData[selBlock]={status:'none',tasks:[]};
-  if (!blockData[selBlock].tasks) blockData[selBlock].tasks=[];
-  blockData[selBlock].tasks.push({ id:Date.now(), name, total, logs:[] });
-  await saveBlock(selBlock);
-  bTab='tasks'; toast('Tarea agregada');
-}
-
-async function deleteTask(id, tid) {
-  if (!confirm('¿Eliminar esta tarea y todos sus registros?')) return;
-  blockData[id].tasks = blockData[id].tasks.filter(t=>t.id!==tid);
-  await saveBlock(id);
-  toast('Tarea eliminada');
-}
-
-async function submitLog() {
-  if (!selBlock) return;
-  const date = document.getElementById('log-date')?.value || todayStr();
-  const b = blockData[selBlock];
+async function submitCargar(){
+  const bId=document.getElementById('car-block')?.value;
+  const date=document.getElementById('car-date')?.value||todayStr();
+  if(!bId)return toast('Seleccioná un bloque','err');
+  const b=blockData[bId];if(!b?.tasks?.length)return toast('Este bloque no tiene tareas','err');
   let any=false;
-  b.tasks.forEach(t => {
-    const q = parseInt(document.getElementById('lq-'+t.id)?.value||0);
-    if (q>0) {
-      if (!t.logs) t.logs=[];
-      const ex = t.logs.find(l=>l.date===date);
-      if (ex) ex.qty = (+ex.qty||0)+q;
-      else { t.logs.push({date,qty:q}); t.logs.sort((a,b)=>a.date.localeCompare(b.date)); }
-      any=true;
-    }
+  b.tasks.forEach(t=>{
+    const q=parseInt(document.getElementById('cq-'+t.id)?.value||0);
+    if(q>0){if(!t.logs)t.logs=[];const ex=t.logs.find(l=>l.date===date);if(ex)ex.qty=(+ex.qty||0)+q;else{t.logs.push({date,qty:q});t.logs.sort((a,b)=>a.date.localeCompare(b.date));}any=true;}
   });
-  if (!any) return toast('Ingresá al menos una cantidad mayor a 0','err');
-  await saveBlock(selBlock);
-  bTab='tasks'; toast('Avance registrado correctamente');
+  if(!any)return toast('Ingresá al menos una cantidad','err');
+  await saveBlock(bId);toast('Avance guardado');
+}
+async function addBlock(){
+  const rawId=document.getElementById('new-block-id')?.value.trim().toUpperCase();
+  if(!rawId)return toast('Ingresá un ID','err');if(blockList.includes(rawId))return toast('Ya existe ese bloque','err');
+  blockList.push(rawId);blockData[rawId]={status:'none',tasks:[]};
+  await saveConfig();await saveBlock(rawId);
+  onSnapshot(doc(db,'blocks',rawId),snap=>{blockData[rawId]=snap.exists()?snap.data():{status:'none',tasks:[]};scheduleRender();});
+  document.getElementById('new-block-id').value='';toast('Bloque '+rawId+' agregado');
+}
+async function deleteBlock(){
+  const rawId=document.getElementById('del-block-id')?.value.trim().toUpperCase();
+  if(!rawId)return toast('Ingresá el ID','err');if(!blockList.includes(rawId))return toast('No existe','err');
+  if(!confirm(`¿Eliminar el bloque ${rawId} y TODOS sus datos?`))return;
+  blockList=blockList.filter(id=>id!==rawId);delete blockData[rawId];
+  await saveConfig();document.getElementById('del-block-id').value='';toast('Bloque eliminado');
 }
 
-async function submitCargar() {
-  const bId  = document.getElementById('car-block')?.value;
-  const date = document.getElementById('car-date')?.value || todayStr();
-  if (!bId) return toast('Seleccioná un bloque','err');
-  const b = blockData[bId];
-  if (!b?.tasks?.length) return toast('Este bloque no tiene tareas definidas','err');
+// ── Acciones elementos ────────────────────────────────────────────
+function setETab(t){eTab=t;render();}
+async function addElement(){
+  const name=document.getElementById('en-name')?.value.trim();
+  const total=parseInt(document.getElementById('en-total')?.value);
+  if(!name||!(total>0))return toast('Completá nombre y cantidad total','err');
+  if(elements.find(e=>e.name.toLowerCase()===name.toLowerCase()))return toast('Ya existe un elemento con ese nombre','err');
+  elements.push({id:Date.now(),name,total,logs:[],assignments:[]});
+  await saveElements();
+  document.getElementById('en-name').value='';document.getElementById('en-total').value='';
+  eTab='stock';toast('Elemento "'+name+'" agregado');
+}
+async function deleteElement(eid){
+  const e=elements.find(x=>x.id===eid);if(!e)return;
+  if(!confirm(`¿Eliminar "${e.name}" y todos sus registros?`))return;
+  elements=elements.filter(x=>x.id!==eid);await saveElements();toast('Elemento eliminado');
+}
+async function submitElemLog(){
+  const date=document.getElementById('el-date')?.value||todayStr();
   let any=false;
-  b.tasks.forEach(t => {
-    const q = parseInt(document.getElementById('cq-'+t.id)?.value||0);
-    if (q>0) {
-      if (!t.logs) t.logs=[];
-      const ex = t.logs.find(l=>l.date===date);
-      if (ex) ex.qty = (+ex.qty||0)+q;
-      else { t.logs.push({date,qty:q}); t.logs.sort((a,b)=>a.date.localeCompare(b.date)); }
-      any=true;
-    }
+  elements.forEach(e=>{
+    const q=parseInt(document.getElementById('eq-'+e.id)?.value||0);
+    if(q>0){if(!e.logs)e.logs=[];const ex=e.logs.find(l=>l.date===date);if(ex)ex.qty=(+ex.qty||0)+q;else{e.logs.push({date,qty:q});e.logs.sort((a,b)=>a.date.localeCompare(b.date));}any=true;}
   });
-  if (!any) return toast('Ingresá al menos una cantidad','err');
-  await saveBlock(bId);
-  toast('Avance guardado correctamente');
+  if(!any)return toast('Ingresá al menos una cantidad','err');
+  await saveElements();eTab='stock';toast('Producción del día registrada');
 }
-
-async function addBlock() {
-  const rawId = document.getElementById('new-block-id')?.value.trim().toUpperCase();
-  if (!rawId) return toast('Ingresá un ID para el bloque','err');
-  if (blockList.includes(rawId)) return toast('Ya existe ese bloque','err');
-  blockList.push(rawId);
-  blockData[rawId] = { status:'none', tasks:[] };
-  await saveConfig();
-  await saveBlock(rawId);
-  onSnapshot(doc(db,'blocks',rawId), snap => {
-    blockData[rawId] = snap.exists() ? snap.data() : { status:'none', tasks:[] };
-    scheduleRender();
-  });
-  document.getElementById('new-block-id').value='';
-  toast('Bloque '+rawId+' agregado');
+async function assignFromPanel(){
+  const eid=parseInt(document.getElementById('bp-elem')?.value);
+  const qty=parseInt(document.getElementById('bp-qty')?.value||0);
+  if(!eid||!(qty>0)||!selBlock)return toast('Completá todos los campos','err');
+  const e=elements.find(x=>x.id===eid);if(!e)return;
+  const avail=eAvail(e);
+  if(qty>avail)return toast(`Solo hay ${avail} ${e.name} disponibles en stock`,'err');
+  if(!e.assignments)e.assignments=[];
+  e.assignments.push({blockId:selBlock,qty,date:todayStr()});
+  await saveElements();document.getElementById('bp-qty').value='';
+  toast(`${qty} ${e.name} asignados a ${selBlock}`);
 }
-
-async function deleteBlock() {
-  const rawId = document.getElementById('del-block-id')?.value.trim().toUpperCase();
-  if (!rawId) return toast('Ingresá el ID del bloque a eliminar','err');
-  if (!blockList.includes(rawId)) return toast('No existe ese bloque','err');
-  if (!confirm(`¿Eliminar el bloque ${rawId} y TODOS sus datos? Esta acción no se puede deshacer.`)) return;
-  blockList = blockList.filter(id=>id!==rawId);
-  delete blockData[rawId];
-  await saveConfig();
-  document.getElementById('del-block-id').value='';
-  toast('Bloque eliminado');
+async function removeAssignment(eid,idx){
+  const e=elements.find(x=>x.id===eid);if(!e||!e.assignments)return;
+  if(!confirm('¿Quitar esta asignación? Las unidades vuelven al stock.'))return;
+  e.assignments.splice(idx,1);await saveElements();toast('Asignación eliminada, unidades devueltas al stock');
 }
 
 // ── Render ────────────────────────────────────────────────────────
-function render() {
-  const gp = gProg();
-  const blbRow  = blockList.filter(id=>id.endsWith('B')&&!id.startsWith('VO'));
-  const bleRow  = blockList.filter(id=>id.endsWith('E')&&!id.startsWith('VO'));
-  const bows    = blockList.filter(id=>id.startsWith('VO'));
-  const leftBow = bows[0]||null;
-  const rightBow= bows[1]||null;
-
-  document.getElementById('root').innerHTML = `
+function render(){
+  const gp=gProg();
+  const blbRow=blockList.filter(id=>id.endsWith('B')&&!id.startsWith('VO'));
+  const bleRow=blockList.filter(id=>id.endsWith('E')&&!id.startsWith('VO'));
+  const bows=blockList.filter(id=>id.startsWith('VO'));
+  document.getElementById('root').innerHTML=`
     <header class="header">
       <div class="header-title">Dique — Control de Producción</div>
       <div class="header-right">
-        ${isEditor
-          ? `<span class="editor-badge">Editor</span>
-             <button class="btn-header" onclick="logout()">Cerrar sesión</button>`
-          : `<button class="btn-header" onclick="openLogin()">Acceso editor</button>`}
+        ${isEditor?`<span class="editor-badge">Editor</span><button class="btn-header" onclick="logout()">Cerrar sesión</button>`:`<button class="btn-header" onclick="openLogin()">Acceso editor</button>`}
       </div>
     </header>
-
     <nav class="nav">
-      <button class="nav-btn ${view==='mapa'?'active':''}"      onclick="setNav('mapa')">Mapa</button>
-      <button class="nav-btn ${view==='dashboard'?'active':''}" onclick="setNav('dashboard')">Dashboard</button>
-      ${isEditor ? `
-        <button class="nav-btn ${view==='cargar'?'active':''}"  onclick="setNav('cargar')">Cargar avance</button>
-        <button class="nav-btn ${view==='admin'?'active':''}"   onclick="setNav('admin')">Admin</button>
-      `:``}
+      <button class="nav-btn ${view==='mapa'?'active':''}"       onclick="setNav('mapa')">Mapa</button>
+      <button class="nav-btn ${view==='elementos'?'active':''}"  onclick="setNav('elementos')">Avance total</button>
+      <button class="nav-btn ${view==='dashboard'?'active':''}"  onclick="setNav('dashboard')">Dashboard</button>
+      ${isEditor?`
+        <button class="nav-btn ${view==='cargar'?'active':''}"   onclick="setNav('cargar')">Cargar avance</button>
+        <button class="nav-btn ${view==='admin'?'active':''}"    onclick="setNav('admin')">Admin</button>`:''}
     </nav>
-
     <main class="main">
-      ${toastInfo ? `<div class="toast ${toastInfo.type}">${esc(toastInfo.msg)}</div>` : ''}
-      ${view==='mapa'      ? rMapa(gp,blbRow,bleRow,leftBow,rightBow) : ''}
-      ${view==='dashboard' ? rDash(gp) : ''}
-      ${view==='cargar' && isEditor ? rCargar() : ''}
-      ${view==='admin'  && isEditor ? rAdmin()  : ''}
-    </main>
-  `;
+      ${toastInfo?`<div class="toast ${toastInfo.type}">${esc(toastInfo.msg)}</div>`:''}
+      ${view==='mapa'      ?rMapa(gp,blbRow,bleRow,bows[0]||null,bows[1]||null):''}
+      ${view==='elementos' ?rElementos():''}
+      ${view==='dashboard' ?rDash(gp):''}
+      ${view==='cargar'&&isEditor?rCargar():''}
+      ${view==='admin' &&isEditor?rAdmin():''}
+    </main>`;
 }
 
-// ── Mapa view ─────────────────────────────────────────────────────
-function rMapa(gp, blbRow, bleRow, leftBow, rightBow) {
-  const nWip  = blockList.filter(id=>blockData[id]?.status==='wip').length;
-  const nDone = blockList.filter(id=>blockData[id]?.status==='done').length;
+// ── Vistas ────────────────────────────────────────────────────────
+function rMapa(gp,blbRow,bleRow,leftBow,rightBow){
+  const nWip=blockList.filter(id=>blockData[id]?.status==='wip').length;
+  const nDone=blockList.filter(id=>blockData[id]?.status==='done').length;
   return `
     <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-label">Avance global</div>
-        <div class="stat-value">${gp.pct}%</div>
-        <div class="stat-sub">${gp.done} / ${gp.total} unidades</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">En proceso</div>
-        <div class="stat-value" style="color:#633806">${nWip}</div>
-        <div class="stat-sub">bloques activos</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Terminados</div>
-        <div class="stat-value" style="color:#27500A">${nDone}</div>
-        <div class="stat-sub">de ${blockList.length} bloques</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Cargado hoy</div>
-        <div class="stat-value">${todayUnits()}</div>
-        <div class="stat-sub">unidades</div>
-      </div>
+      <div class="stat-card"><div class="stat-label">Avance global</div><div class="stat-value">${gp.pct}%</div><div class="stat-sub">${gp.done} / ${gp.total} unidades</div></div>
+      <div class="stat-card"><div class="stat-label">En proceso</div><div class="stat-value" style="color:#633806">${nWip}</div><div class="stat-sub">bloques activos</div></div>
+      <div class="stat-card"><div class="stat-label">Terminados</div><div class="stat-value" style="color:#27500A">${nDone}</div><div class="stat-sub">de ${blockList.length} bloques</div></div>
+      <div class="stat-card"><div class="stat-label">Cargado hoy</div><div class="stat-value">${todayUnits()}</div><div class="stat-sub">unidades</div></div>
     </div>
-
     <div class="prog-wrap">
-      <div class="prog-top">
-        <span class="prog-lbl">Progreso global de producción</span>
-        <span class="prog-pct">${gp.pct}%</span>
-      </div>
+      <div class="prog-top"><span class="prog-lbl">Progreso global de producción</span><span class="prog-pct">${gp.pct}%</span></div>
       <div class="prog-bar"><div class="prog-fill" style="width:${gp.pct}%"></div></div>
     </div>
-
-    ${rShip(blbRow, bleRow, leftBow, rightBow)}
-    ${selBlock ? rPanel() : ''}
-  `;
+    ${rShip(blbRow,bleRow,leftBow,rightBow)}
+    ${selBlock?rPanel():''}`;
 }
 
-function rShip(blbRow, bleRow, leftBow, rightBow) {
-  function blk(id, bow) {
-    if (!id) return '';
-    const b   = blockData[id] || {status:'none',tasks:[]};
-    const s   = STATUS[b.status] || STATUS.none;
-    const p   = bProg(id);
-    const cls = bow ? 'bow-block' : 'block';
-    const sel = selBlock===id;
-    return `<div class="${cls}${sel?' sel':''}"
-      style="background:${s.bg};border-color:${s.bd};color:${s.tx}"
-      onclick="selBlockFn('${id}')">
+function rShip(blbRow,bleRow,leftBow,rightBow){
+  function blk(id,bow){
+    if(!id)return'';
+    const b=blockData[id]||{status:'none',tasks:[]},s=STATUS[b.status]||STATUS.none,p=bProg(id),sel=selBlock===id;
+    return`<div class="${bow?'bow-block':'block'}${sel?' sel':''}" style="background:${s.bg};border-color:${s.bd};color:${s.tx}" onclick="selBlockFn('${id}')">
       <div class="block-id">${id}</div>
-      <div class="block-pct">${p.pct}%</div>
+      <div style="font-size:8px;opacity:.75">${p.pct}%</div>
       <div class="mini-bar"><div class="mini-fill" style="width:${p.pct}%"></div></div>
     </div>`;
   }
-  const spacer = `<div style="width:48px;flex-shrink:0;visibility:hidden"></div>`;
-  return `
-    <div class="ship-wrap">
-      <div class="ship-lbl">Vista de cubierta — popa → proa</div>
-      <div class="deck-row">
-        <div class="row-lbl">Bab.</div>
-        ${leftBow  ? `<div style="margin-right:4px">${blk(leftBow,true)}</div>`  : ''}
-        <div class="blocks-row">${blbRow.map(id=>blk(id,false)).join('')}</div>
-        ${rightBow ? `<div style="margin-left:4px">${blk(rightBow,true)}</div>` : ''}
-      </div>
-      <div class="centerline"></div>
-      <div class="deck-row">
-        <div class="row-lbl">Estr.</div>
-        ${leftBow  ? `<div style="margin-right:4px">${spacer}</div>`  : ''}
-        <div class="blocks-row">${bleRow.map(id=>blk(id,false)).join('')}</div>
-        ${rightBow ? `<div style="margin-left:4px">${spacer}</div>` : ''}
-      </div>
-      <div class="legend">
-        ${Object.entries(STATUS).map(([,v])=>
-          `<div class="leg-item"><div class="leg-dot" style="background:${v.bg};border-color:${v.bd}"></div>${v.label}</div>`
-        ).join('')}
-      </div>
+  const sp=`<div style="width:48px;flex-shrink:0;visibility:hidden"></div>`;
+  return`<div class="ship-wrap">
+    <div class="ship-lbl">Vista de cubierta — popa → proa</div>
+    <div class="deck-row">
+      <div class="row-lbl">Bab.</div>
+      ${leftBow?`<div style="margin-right:4px">${blk(leftBow,true)}</div>`:''}
+      <div class="blocks-row">${blbRow.map(id=>blk(id,false)).join('')}</div>
+      ${rightBow?`<div style="margin-left:4px">${blk(rightBow,true)}</div>`:''}
     </div>
-  `;
+    <div class="centerline"></div>
+    <div class="deck-row">
+      <div class="row-lbl">Estr.</div>
+      ${leftBow?`<div style="margin-right:4px">${sp}</div>`:''}
+      <div class="blocks-row">${bleRow.map(id=>blk(id,false)).join('')}</div>
+      ${rightBow?`<div style="margin-left:4px">${sp}</div>`:''}
+    </div>
+    <div class="legend">
+      ${Object.entries(STATUS).map(([,v])=>`<div class="leg-item"><div class="leg-dot" style="background:${v.bg};border-color:${v.bd}"></div>${v.label}</div>`).join('')}
+    </div>
+  </div>`;
 }
 
-function rPanel() {
-  const id = selBlock;
-  const b  = blockData[id] || {status:'none',tasks:[]};
-  const s  = STATUS[b.status] || STATUS.none;
-  const p  = bProg(id);
-  return `
-    <div class="panel">
-      <div class="panel-head">
-        <div class="panel-title-row">
-          <div class="panel-title">
-            <span style="display:inline-block;width:10px;height:10px;border-radius:2px;
-              background:${s.bg};border:1px solid ${s.bd};margin-right:7px;vertical-align:middle"></span>
-            Bloque ${esc(id)} — ${p.pct}% &nbsp;(${p.done}/${p.total} u.)
-          </div>
-          <button class="panel-close" onclick="closePanel()">×</button>
+function rPanel(){
+  const id=selBlock,b=blockData[id]||{status:'none',tasks:[]},s=STATUS[b.status]||STATUS.none,p=bProg(id);
+  return`<div class="panel">
+    <div class="panel-head">
+      <div class="panel-title-row">
+        <div class="panel-title">
+          <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${s.bg};border:1px solid ${s.bd};margin-right:7px;vertical-align:middle"></span>
+          Bloque ${esc(id)} — ${p.pct}% &nbsp;(${p.done}/${p.total} u.)
         </div>
-        ${isEditor ? `
-          <div class="status-row">
-            ${Object.entries(STATUS).map(([k,v])=>`
-              <button class="status-btn"
-                style="background:${b.status===k?v.bg:'transparent'};
-                       border-color:${b.status===k?v.bd:'#c0bfb8'};
-                       color:${b.status===k?v.tx:'#888780'}"
-                onclick="setStatus('${id}','${k}')">
-                ${v.label}
-              </button>`).join('')}
-          </div>` : ''}
+        <button class="panel-close" onclick="closePanel()">×</button>
       </div>
-      <div class="subtabs">
-        <button class="subtab ${bTab==='tasks'?'active':''}" onclick="setBTab('tasks')">Tareas (${b.tasks?.length||0})</button>
-        ${isEditor ? `
-          <button class="subtab ${bTab==='add'?'active':''}"  onclick="setBTab('add')">+ Agregar tarea</button>
-          <button class="subtab ${bTab==='log'?'active':''}"  onclick="setBTab('log')">Registrar avance</button>
-        ` : ''}
-        <button class="subtab ${bTab==='hist'?'active':''}" onclick="setBTab('hist')">Historial</button>
-      </div>
-      <div class="panel-body">
-        ${bTab==='tasks'               ? rTasks(id) : ''}
-        ${bTab==='add'  && isEditor    ? rAddTask() : ''}
-        ${bTab==='log'  && isEditor    ? rLogAdv(id): ''}
-        ${bTab==='hist'                ? rHist(id)  : ''}
-      </div>
+      ${isEditor?`<div class="status-row">${Object.entries(STATUS).map(([k,v])=>`
+        <button class="status-btn" style="background:${b.status===k?v.bg:'transparent'};border-color:${b.status===k?v.bd:'#c0bfb8'};color:${b.status===k?v.tx:'#888780'}" onclick="setStatus('${id}','${k}')">${v.label}</button>`).join('')}</div>`:''}
     </div>
-  `;
+    <div class="subtabs">
+      <button class="subtab ${bTab==='tasks'?'active':''}" onclick="setBTab('tasks')">Tareas (${b.tasks?.length||0})</button>
+      <button class="subtab ${bTab==='mats'?'active':''}"  onclick="setBTab('mats')">Materiales</button>
+      ${isEditor?`
+        <button class="subtab ${bTab==='add'?'active':''}" onclick="setBTab('add')">+ Tarea</button>
+        <button class="subtab ${bTab==='log'?'active':''}" onclick="setBTab('log')">Registrar avance</button>`:''}
+      <button class="subtab ${bTab==='hist'?'active':''}"  onclick="setBTab('hist')">Historial</button>
+    </div>
+    <div class="panel-body">
+      ${bTab==='tasks'?rTasks(id):''}
+      ${bTab==='mats' ?rMats(id) :''}
+      ${bTab==='add'  &&isEditor?rAddTask():''}
+      ${bTab==='log'  &&isEditor?rLogAdv(id):''}
+      ${bTab==='hist' ?rHist(id) :''}
+    </div>
+  </div>`;
 }
 
-function rTasks(id) {
-  const tasks = blockData[id]?.tasks || [];
-  if (!tasks.length)
-    return `<div class="empty">Sin tareas definidas.${isEditor?' Usá la pestaña "+ Agregar tarea".':''}</div>`;
-  return tasks.map(t => {
-    const done = tDone(t), pct = tPct(t), rem = Math.max(0,t.total-done);
-    return `<div class="task-row">
-      <div class="task-info">
-        <div class="task-name">${esc(t.name)}</div>
-        <div class="task-sub">${done} / ${t.total} hechos &mdash; faltan ${rem}</div>
-      </div>
-      <div class="task-prog">
-        <div class="task-bar"><div class="task-fill" style="width:${pct}%"></div></div>
-        <div class="task-pct">${pct}%</div>
-      </div>
-      ${isEditor ? `<button class="del-btn" onclick="deleteTask('${id}',${t.id})" title="Eliminar tarea">×</button>` : ''}
+function rTasks(id){
+  const tasks=blockData[id]?.tasks||[];
+  if(!tasks.length)return`<div class="empty">Sin tareas definidas.${isEditor?' Usá la pestaña "+ Tarea".':''}</div>`;
+  return tasks.map(t=>{
+    const done=tDone(t),pct=tPct(t),rem=Math.max(0,t.total-done);
+    return`<div class="task-row">
+      <div class="task-info"><div class="task-name">${esc(t.name)}</div><div class="task-sub">${done} / ${t.total} hechos — faltan ${rem}</div></div>
+      <div class="task-prog"><div class="task-bar"><div class="task-fill" style="width:${pct}%"></div></div><div class="task-pct">${pct}%</div></div>
+      ${isEditor?`<button class="del-btn" onclick="deleteTask('${id}',${t.id})">×</button>`:''}
     </div>`;
   }).join('');
 }
 
-function rAddTask() {
-  return `
-    <div class="form-grid-2">
-      <div class="form-group">
-        <label class="form-label">Nombre del trabajo</label>
-        <input class="form-input" id="nt-name" placeholder="Ej: Construcción de candeleros"
-          onkeydown="if(event.key==='Enter')document.getElementById('nt-total').focus()">
+function rMats(id){
+  const withQty=elements.map(e=>({e,qty:blockAssigned(id,e.id)})).filter(({qty})=>qty>0);
+  const matList=withQty.length
+    ?withQty.map(({e,qty})=>`<div class="task-row">
+        <div class="task-info"><div class="task-name">${esc(e.name)}</div>
+        <div class="task-sub" style="color:${eAvail(e)>0?'#27500A':'#633806'}">Stock disponible: <strong>${eAvail(e)}</strong> u. &nbsp;|&nbsp; Total producido: ${eProd(e)}</div></div>
+        <div style="font-size:16px;font-weight:500;min-width:60px;text-align:right">${qty} u.</div>
+      </div>`).join('')
+    :`<div class="empty" style="margin-bottom:12px">Sin materiales asignados a este bloque todavía.</div>`;
+
+  const assignForm=isEditor&&elements.length?`
+    <div class="section-title" style="margin-top:14px;padding-top:12px;border-top:.5px solid #dddcd6">Asignar material desde stock</div>
+    <div class="form-grid-3" style="margin-bottom:8px">
+      <div class="form-group" style="margin:0">
+        <label class="form-label">Elemento</label>
+        <select class="form-input" id="bp-elem">
+          <option value="">— Seleccioná —</option>
+          ${elements.map(e=>`<option value="${e.id}">${esc(e.name)} (stock: ${eAvail(e)})</option>`).join('')}
+        </select>
       </div>
-      <div class="form-group">
-        <label class="form-label">Total de unidades</label>
-        <input class="form-input" type="number" id="nt-total" placeholder="Ej: 80" min="1"
-          onkeydown="if(event.key==='Enter')addTask()">
-      </div>
-    </div>
-    <button class="btn-primary" onclick="addTask()">Agregar tarea al bloque</button>
-  `;
+      <div class="form-group" style="margin:0"><label class="form-label">Cantidad</label><input class="form-input" type="number" id="bp-qty" placeholder="0" min="1"></div>
+      <div class="form-group" style="margin:0;display:flex;align-items:flex-end"><button class="btn-primary" style="margin:0" onclick="assignFromPanel()">Asignar</button></div>
+    </div>`
+    :isEditor&&!elements.length?`<div class="empty" style="margin-top:12px">No hay elementos en el sistema. Creálos en "Avance total".</div>`:'' ;
+
+  return matList+assignForm;
 }
 
-function rLogAdv(id) {
-  const tasks = blockData[id]?.tasks || [];
-  if (!tasks.length)
-    return `<div class="empty">Primero agregá tareas desde la pestaña "+ Agregar tarea".</div>`;
-  return `
-    <div class="form-group" style="margin-bottom:12px">
-      <label class="form-label">Fecha de producción</label>
-      <input class="form-input" type="date" id="log-date" value="${todayStr()}" style="max-width:200px">
-    </div>
+function rAddTask(){
+  return`<div class="form-grid-2">
+    <div class="form-group"><label class="form-label">Nombre del trabajo</label><input class="form-input" id="nt-name" placeholder="Ej: Construcción de candeleros" onkeydown="if(event.key==='Enter')document.getElementById('nt-total').focus()"></div>
+    <div class="form-group"><label class="form-label">Total de unidades</label><input class="form-input" type="number" id="nt-total" placeholder="Ej: 80" min="1" onkeydown="if(event.key==='Enter')addTask()"></div>
+  </div>
+  <button class="btn-primary" onclick="addTask()">Agregar tarea al bloque</button>`;
+}
+
+function rLogAdv(id){
+  const tasks=blockData[id]?.tasks||[];
+  if(!tasks.length)return`<div class="empty">Primero agregá tareas desde la pestaña "+ Tarea".</div>`;
+  return`<div class="form-group" style="margin-bottom:12px"><label class="form-label">Fecha</label><input class="form-input" type="date" id="log-date" value="${todayStr()}" style="max-width:200px"></div>
     <div class="section-title">Unidades producidas en el día</div>
-    ${tasks.map(t => {
-      const done=tDone(t), rem=Math.max(0,t.total-done);
-      return `<div class="log-row">
-        <div class="log-info">
-          <div class="log-name">${esc(t.name)}</div>
-          <div class="log-sub">${tPct(t)}% — ${done}/${t.total} hechos, restan ${rem}</div>
-        </div>
-        <input class="log-qty" type="number" id="lq-${t.id}" placeholder="0" min="0" max="${rem}">
-      </div>`;
-    }).join('')}
-    <button class="btn-primary" onclick="submitLog()">Guardar avance del día</button>
-  `;
+    ${tasks.map(t=>{const done=tDone(t),rem=Math.max(0,t.total-done);return`<div class="log-row">
+      <div class="log-info"><div class="log-name">${esc(t.name)}</div><div class="log-sub">${tPct(t)}% — ${done}/${t.total}, restan ${rem}</div></div>
+      <input class="log-qty" type="number" id="lq-${t.id}" placeholder="0" min="0" max="${rem}">
+    </div>`;}).join('')}
+    <button class="btn-primary" onclick="submitLog()">Guardar avance del día</button>`;
 }
 
-function rHist(id) {
-  const tasks = blockData[id]?.tasks || [];
-  if (!tasks.length) return `<div class="empty">Sin tareas definidas.</div>`;
-  const allDates = new Set();
-  tasks.forEach(t => (t.logs||[]).forEach(l => allDates.add(l.date)));
-  const dates = [...allDates].sort().reverse();
-  if (!dates.length) return `<div class="empty">Sin registros de avance todavía. Cargá producción diaria desde "Registrar avance".</div>`;
-  return dates.map(date => {
-    const entries = tasks.map(t => {
-      const log = (t.logs||[]).find(l=>l.date===date);
-      return log && log.qty ? {name:t.name, qty:log.qty} : null;
-    }).filter(Boolean);
-    if (!entries.length) return '';
-    const dayTotal = entries.reduce((s,e)=>s+e.qty, 0);
-    return `<div class="hist-group">
-      <div class="hist-header">
-        <span>${date}</span>
-        <span>${dayTotal} unidades totales</span>
+function rHist(id){
+  const tasks=blockData[id]?.tasks||[];
+  if(!tasks.length)return`<div class="empty">Sin tareas definidas.</div>`;
+  const allDates=new Set();tasks.forEach(t=>(t.logs||[]).forEach(l=>allDates.add(l.date)));
+  const dates=[...allDates].sort().reverse();
+  if(!dates.length)return`<div class="empty">Sin registros todavía.</div>`;
+  return dates.map(date=>{
+    const entries=tasks.map(t=>{const log=(t.logs||[]).find(l=>l.date===date);return log&&log.qty?{name:t.name,qty:log.qty}:null;}).filter(Boolean);
+    if(!entries.length)return'';
+    return`<div class="hist-group"><div class="hist-header"><span>${date}</span><span>${entries.reduce((s,e)=>s+e.qty,0)} u. totales</span></div>
+      ${entries.map(e=>`<div class="hist-row"><span>${esc(e.name)}</span><span style="color:#1a1a18;font-weight:500">+${e.qty} u.</span></div>`).join('')}</div>`;
+  }).join('');
+}
+
+// ── Avance total (Elementos) ──────────────────────────────────────
+function rElementos(){
+  const gep=elemGlobalProg();
+  const totAsig=elements.reduce((s,e)=>s+eAssigned(e),0);
+  const totAvail=elements.reduce((s,e)=>s+eAvail(e),0);
+  return`
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-label">Avance producción</div><div class="stat-value">${gep.pct}%</div><div class="stat-sub">${gep.prod} / ${gep.total} u.</div></div>
+      <div class="stat-card"><div class="stat-label">Tipos de elemento</div><div class="stat-value">${elements.length}</div><div class="stat-sub">definidos</div></div>
+      <div class="stat-card"><div class="stat-label">Asignados a bloques</div><div class="stat-value" style="color:#185FA5">${totAsig}</div><div class="stat-sub">unidades</div></div>
+      <div class="stat-card"><div class="stat-label">Stock disponible</div><div class="stat-value" style="color:#27500A">${totAvail}</div><div class="stat-sub">sin asignar</div></div>
+    </div>
+    <div class="tab-header">
+      <button class="subtab ${eTab==='stock'?'active':''}"  onclick="setETab('stock')">Stock por elemento</button>
+      <button class="subtab ${eTab==='asign'?'active':''}"  onclick="setETab('asign')">Asignaciones por bloque</button>
+      ${isEditor?`
+        <button class="subtab ${eTab==='prod'?'active':''}"  onclick="setETab('prod')">Cargar producción</button>
+        <button class="subtab ${eTab==='addel'?'active':''}" onclick="setETab('addel')">+ Elemento</button>`:''}
+    </div>
+    <div class="tab-panel">
+      ${eTab==='stock'            ?rElemStock():''}
+      ${eTab==='asign'            ?rElemAsign():''}
+      ${eTab==='prod'  &&isEditor ?rElemProd() :''}
+      ${eTab==='addel' &&isEditor ?rElemAdd()  :''}
+    </div>`;
+}
+
+function rElemStock(){
+  if(!elements.length)return`<div class="empty">No hay elementos definidos.${isEditor?' Usá la pestaña "+ Elemento".':''}</div>`;
+  return elements.map(e=>{
+    const prod=eProd(e),asig=eAssigned(e),avail=eAvail(e),pct=ePct(e);
+    const apct=e.total?Math.min(100,Math.round(asig/e.total*100)):0;
+    const stockTag=avail>0?`<span class="stock-ok">${avail} en stock</span>`:prod>0?`<span class="stock-warn">Stock agotado</span>`:`<span class="stock-none">Sin producción</span>`;
+    return`<div class="elem-card">
+      <div class="elem-top">
+        <div class="elem-name">${esc(e.name)}</div>
+        <div style="display:flex;align-items:center;gap:6px">
+          ${stockTag}
+          ${isEditor?`<button class="del-btn" style="font-size:14px" onclick="deleteElement(${e.id})">×</button>`:''}
+        </div>
       </div>
-      ${entries.map(e=>`<div class="hist-row"><span>${esc(e.name)}</span><span style="color:#1a1a18;font-weight:500">+${e.qty} u.</span></div>`).join('')}
+      <div class="elem-nums">
+        <div class="en-item"><div class="en-lbl">Necesario</div><div class="en-val">${e.total}</div><div class="en-sub">para el proyecto</div></div>
+        <div class="en-item"><div class="en-lbl">Producido</div><div class="en-val" style="color:#3B6D11">${prod}</div><div class="en-sub">${pct}% del total</div></div>
+        <div class="en-item"><div class="en-lbl">Asignado</div><div class="en-val" style="color:#185FA5">${asig}</div><div class="en-sub">a bloques</div></div>
+        <div class="en-item"><div class="en-lbl">Disponible</div><div class="en-val" style="color:${avail>0?'#27500A':'#888780'}">${avail}</div><div class="en-sub">en stock</div></div>
+      </div>
+      <div style="margin-bottom:4px;font-size:9px;color:#888780;display:flex;gap:12px">
+        <span><span style="display:inline-block;width:8px;height:8px;background:#97C459;border-radius:1px;margin-right:3px"></span>Producido ${pct}%</span>
+        <span><span style="display:inline-block;width:8px;height:8px;background:#378ADD;border-radius:1px;margin-right:3px"></span>Asignado ${apct}%</span>
+      </div>
+      <div style="position:relative;height:5px;background:#dddcd6;border-radius:3px;overflow:hidden">
+        <div style="position:absolute;inset:0;width:${pct}%;background:#97C459"></div>
+        <div style="position:absolute;inset:0;width:${apct}%;background:rgba(55,138,221,0.6)"></div>
+      </div>
     </div>`;
   }).join('');
 }
 
-// ── Dashboard view ────────────────────────────────────────────────
-function rDash(gp) {
-  const daily = dailyData();
-  const proj  = projFinish();
-  const avg   = avgDaily();
-  const hoy   = todayUnits();
-  const nDone = blockList.filter(id=>blockData[id]?.status==='done').length;
-  const last14= daily.slice(-14);
-
-  const chartHTML = last14.length
-    ? (() => {
-        const maxV = Math.max(...last14.map(([,v])=>v),1);
-        return `
-          <div class="section-title" style="margin-bottom:8px">Producción diaria — últimos ${last14.length} días registrados</div>
-          <div class="chart-bars">
-            ${last14.map(([d,v])=>{
-              const h=Math.max(4,Math.round(v/maxV*80));
-              return `<div class="chart-bar" style="height:${h}px" title="${d}: ${v} u."></div>`;
-            }).join('')}
-          </div>
-          <div class="chart-dates">
-            ${last14.map(([d])=>`<div class="chart-date">${d.slice(5)}</div>`).join('')}
-          </div>`;
-      })()
-    : `<div class="empty">Sin datos de producción todavía.</div>`;
-
-  const tableRows = blockList.map(id => {
-    const b=blockData[id]||{status:'none',tasks:[]};
-    const p=bProg(id);
-    const s=STATUS[b.status]||STATUS.none;
-    return `<tr>
-      <td><span style="display:inline-flex;align-items:center;gap:6px">
-        <span style="width:8px;height:8px;border-radius:2px;background:${s.bg};border:1px solid ${s.bd};flex-shrink:0;display:inline-block"></span>${id}
-      </span></td>
-      <td>${b.tasks?.length||0}</td>
-      <td>
-        <div class="pcell">
-          <div class="pbar"><div class="pfill" style="width:${p.pct}%"></div></div>
-          <span class="pnum">${p.pct}%</span>
-        </div>
-      </td>
-      <td style="white-space:nowrap">${p.done} / ${p.total}</td>
-      <td><span style="font-size:10px;padding:2px 7px;border-radius:4px;
-        background:${s.bg};color:${s.tx};border:1px solid ${s.bd};white-space:nowrap">
-        ${s.label}</span>
-      </td>
-    </tr>`;
+function rElemAsign(){
+  if(!elements.length)return`<div class="empty">No hay elementos definidos.</div>`;
+  const hasA=elements.some(e=>(e.assignments||[]).length>0);
+  if(!hasA)return`<div class="empty">Sin asignaciones todavía. Abrí un bloque en el Mapa → Materiales → Asignar.</div>`;
+  const byBlock={};
+  elements.forEach(e=>{(e.assignments||[]).forEach((a,idx)=>{if(!byBlock[a.blockId])byBlock[a.blockId]=[];byBlock[a.blockId].push({eid:e.id,ename:e.name,qty:a.qty,date:a.date,idx});});});
+  return Object.entries(byBlock).sort(([a],[b])=>a.localeCompare(b)).map(([blockId,items])=>{
+    const total=items.reduce((s,x)=>s+x.qty,0);
+    return`<div class="hist-group">
+      <div class="hist-header"><span style="font-size:12px;color:#1a1a18;font-weight:500">${blockId}</span><span>${total} u. totales asignadas</span></div>
+      ${items.map(x=>`<div class="hist-row">
+        <span>${esc(x.ename)}<span style="color:#b8b7b0;margin:0 6px">—</span><span style="color:#888780">${x.date}</span></span>
+        <span style="display:flex;align-items:center;gap:8px">
+          <span style="color:#1a1a18;font-weight:500">${x.qty} u.</span>
+          ${isEditor?`<button class="del-btn" style="font-size:13px" onclick="removeAssignment(${x.eid},${x.idx})">×</button>`:''}
+        </span>
+      </div>`).join('')}
+    </div>`;
   }).join('');
+}
 
-  return `
+function rElemProd(){
+  if(!elements.length)return`<div class="empty">Primero agregá elementos en la pestaña "+ Elemento".</div>`;
+  return`<div class="form-group" style="margin-bottom:12px"><label class="form-label">Fecha de producción</label><input class="form-input" type="date" id="el-date" value="${todayStr()}" style="max-width:200px"></div>
+    <div class="section-title">Unidades producidas en el día</div>
+    ${elements.map(e=>{const prod=eProd(e),pct=ePct(e),rem=Math.max(0,e.total-prod);return`<div class="log-row">
+      <div class="log-info"><div class="log-name">${esc(e.name)}</div><div class="log-sub">${pct}% — ${prod}/${e.total} — faltan ${rem} — stock actual: ${eAvail(e)}</div></div>
+      <input class="log-qty" type="number" id="eq-${e.id}" placeholder="0" min="0">
+    </div>`;}).join('')}
+    <button class="btn-primary" onclick="submitElemLog()">Guardar producción del día</button>`;
+}
+
+function rElemAdd(){
+  return`<div class="form-grid-2">
+    <div class="form-group"><label class="form-label">Nombre del elemento</label><input class="form-input" id="en-name" placeholder="Ej: Caños, Candeleros, Varillas..." onkeydown="if(event.key==='Enter')document.getElementById('en-total').focus()"></div>
+    <div class="form-group"><label class="form-label">Total necesario para el proyecto</label><input class="form-input" type="number" id="en-total" placeholder="Ej: 100" min="1" onkeydown="if(event.key==='Enter')addElement()"></div>
+  </div>
+  <button class="btn-primary" onclick="addElement()">Agregar elemento</button>
+  ${elements.length?`<div style="margin-top:14px;border-top:.5px solid #dddcd6;padding-top:12px"><div class="section-title">Elementos cargados</div>
+    ${elements.map(e=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:.5px solid #f0efd8;font-size:13px">
+      <span>${esc(e.name)}</span>
+      <span style="color:#888780">Necesario: ${e.total} &nbsp;|&nbsp; Producido: ${eProd(e)} &nbsp;|&nbsp; Stock: ${eAvail(e)}</span>
+    </div>`).join('')}</div>`:''}`;
+}
+
+// ── Dashboard ─────────────────────────────────────────────────────
+function rDash(gp){
+  const daily=dailyData(),proj=projFinish(),avg=avgDaily(),hoy=todayUnits();
+  const nDone=blockList.filter(id=>blockData[id]?.status==='done').length;
+  const last14=daily.slice(-14);
+  const chartHTML=last14.length?`
+    <div class="section-title" style="margin-bottom:8px">Producción diaria — últimos ${last14.length} días</div>
+    <div class="chart-bars">${last14.map(([d,v])=>{const maxV=Math.max(...last14.map(([,v])=>v),1);const h=Math.max(4,Math.round(v/maxV*80));return`<div class="chart-bar" style="height:${h}px" title="${d}: ${v} u."></div>`;}).join('')}</div>
+    <div class="chart-dates">${last14.map(([d])=>`<div class="chart-date">${d.slice(5)}</div>`).join('')}</div>`
+    :`<div class="empty">Sin datos de producción todavía.</div>`;
+  const rows=blockList.map(id=>{
+    const b=blockData[id]||{status:'none',tasks:[]},p=bProg(id),s=STATUS[b.status]||STATUS.none;
+    return`<tr><td><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:${s.bg};border:1px solid ${s.bd};flex-shrink:0;display:inline-block"></span>${id}</span></td>
+      <td>${b.tasks?.length||0}</td>
+      <td><div class="pcell"><div class="pbar"><div class="pfill" style="width:${p.pct}%"></div></div><span class="pnum">${p.pct}%</span></div></td>
+      <td style="white-space:nowrap">${p.done} / ${p.total}</td>
+      <td><span style="font-size:10px;padding:2px 7px;border-radius:4px;background:${s.bg};color:${s.tx};border:1px solid ${s.bd};white-space:nowrap">${s.label}</span></td></tr>`;
+  }).join('');
+  return`
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-label">Avance global</div><div class="stat-value">${gp.pct}%</div><div class="stat-sub">${gp.done} / ${gp.total} unidades</div></div>
       <div class="stat-card"><div class="stat-label">Cargado hoy</div><div class="stat-value">${hoy}</div><div class="stat-sub">unidades</div></div>
       <div class="stat-card"><div class="stat-label">Promedio diario</div><div class="stat-value">${avg}</div><div class="stat-sub">unidades/día</div></div>
       <div class="stat-card"><div class="stat-label">Terminados</div><div class="stat-value">${nDone}/${blockList.length}</div><div class="stat-sub">bloques</div></div>
     </div>
-
-    <div class="proj-box">
-      <div class="proj-lbl">Proyección de finalización (días hábiles L-V)</div>
-      <div class="proj-val">${proj || 'Necesitás al menos 2 días registrados para calcular.'}</div>
-    </div>
-
+    <div class="proj-box"><div class="proj-lbl">Proyección de finalización (días hábiles L-V)</div><div class="proj-val">${proj||'Necesitás al menos 2 días registrados para calcular.'}</div></div>
     <div class="card">${chartHTML}</div>
-
-    <div class="card">
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Bloque</th><th>Tareas</th><th>Progreso</th><th>Unidades</th><th>Estado</th></tr></thead>
-          <tbody>${tableRows}</tbody>
-        </table>
-      </div>
-    </div>
-  `;
+    <div class="card"><div class="table-wrap"><table><thead><tr><th>Bloque</th><th>Tareas</th><th>Progreso</th><th>Unidades</th><th>Estado</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
 }
 
-// ── Cargar avance view ────────────────────────────────────────────
-function rCargar() {
-  const opts = blockList.map(id => {
-    const n = blockData[id]?.tasks?.length||0;
-    return `<option value="${id}" ${cargarBId===id?'selected':''}>${id} — ${n} tarea${n!==1?'s':''}</option>`;
-  }).join('');
-
-  const b = cargarBId ? blockData[cargarBId] : null;
-  const taskRows = b?.tasks?.length
-    ? b.tasks.map(t => {
-        const done=tDone(t), rem=Math.max(0,t.total-done);
-        return `<div class="log-row">
-          <div class="log-info">
-            <div class="log-name">${esc(t.name)}</div>
-            <div class="log-sub">${tPct(t)}% — ${done}/${t.total} hechos, faltan ${rem}</div>
-          </div>
-          <input class="log-qty" type="number" id="cq-${t.id}" placeholder="0" min="0">
-        </div>`;
-      }).join('')
-    : '';
-
-  return `
-    <div class="card">
-      <div style="font-size:14px;font-weight:500;margin-bottom:14px">Registrar producción del día</div>
-      <div class="form-grid-2" style="margin-bottom:12px">
-        <div class="form-group">
-          <label class="form-label">Bloque</label>
-          <select class="form-input" id="car-block" onchange="cargarBId=this.value;render()">
-            <option value="">— Seleccioná un bloque —</option>
-            ${opts}
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Fecha</label>
-          <input class="form-input" type="date" id="car-date" value="${todayStr()}">
-        </div>
-      </div>
-      ${b && b.tasks?.length
-        ? `<div class="section-title">Unidades producidas</div>${taskRows}
-           <button class="btn-primary" onclick="submitCargar()">Guardar avance</button>`
-        : b && !b.tasks?.length
-          ? `<div class="empty">Este bloque no tiene tareas. Creálas desde el Mapa → bloque → "+ Agregar tarea".</div>`
-          : ''}
+function rCargar(){
+  const opts=blockList.map(id=>{const n=blockData[id]?.tasks?.length||0;return`<option value="${id}" ${cargarBId===id?'selected':''}>${id} — ${n} tarea${n!==1?'s':''}</option>`;}).join('');
+  const b=cargarBId?blockData[cargarBId]:null;
+  const taskRows=b?.tasks?.length?b.tasks.map(t=>{const done=tDone(t),rem=Math.max(0,t.total-done);return`<div class="log-row"><div class="log-info"><div class="log-name">${esc(t.name)}</div><div class="log-sub">${tPct(t)}% — ${done}/${t.total}, faltan ${rem}</div></div><input class="log-qty" type="number" id="cq-${t.id}" placeholder="0" min="0"></div>`;}).join(''):'';
+  return`<div class="card"><div class="card-title">Registrar producción del día</div>
+    <div class="form-grid-2" style="margin-bottom:12px">
+      <div class="form-group"><label class="form-label">Bloque</label><select class="form-input" id="car-block" onchange="cargarBId=this.value;render()"><option value="">— Seleccioná un bloque —</option>${opts}</select></div>
+      <div class="form-group"><label class="form-label">Fecha</label><input class="form-input" type="date" id="car-date" value="${todayStr()}"></div>
     </div>
-  `;
+    ${b&&b.tasks?.length?`<div class="section-title">Unidades producidas</div>${taskRows}<button class="btn-primary" onclick="submitCargar()">Guardar avance</button>`:b&&!b.tasks?.length?`<div class="empty">Este bloque no tiene tareas.</div>`:''}
+  </div>`;
 }
 
-// ── Admin view ────────────────────────────────────────────────────
-function rAdmin() {
-  return `
-    <div class="card">
-      <div style="font-size:14px;font-weight:500;margin-bottom:14px">Agregar nuevo bloque</div>
+function rAdmin(){
+  return`
+    <div class="card"><div class="card-title">Agregar nuevo bloque</div>
       <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap">
-        <div class="form-group" style="flex:1;min-width:160px;margin:0">
-          <label class="form-label">ID del bloque</label>
-          <input class="form-input" id="new-block-id" placeholder="Ej: F09B"
-            style="text-transform:uppercase" onkeydown="if(event.key==='Enter')addBlock()">
-        </div>
+        <div class="form-group" style="flex:1;min-width:160px;margin:0"><label class="form-label">ID del bloque</label><input class="form-input" id="new-block-id" placeholder="Ej: F09B" style="text-transform:uppercase" onkeydown="if(event.key==='Enter')addBlock()"></div>
         <button class="btn-primary" style="width:auto;padding:9px 20px;margin:0" onclick="addBlock()">Agregar</button>
       </div>
-      <div style="font-size:11px;color:#888780;margin-top:10px">
-        Bloques actuales (${blockList.length}): ${blockList.join(', ')}
-      </div>
+      <div style="font-size:11px;color:#888780;margin-top:10px">Actuales (${blockList.length}): ${blockList.join(', ')}</div>
     </div>
-
-    <div class="card">
-      <div style="font-size:14px;font-weight:500;margin-bottom:4px">Eliminar bloque</div>
-      <div style="font-size:12px;color:#A32D2D;margin-bottom:12px">
-        Atención: elimina el bloque y todos sus datos. No se puede deshacer.
-      </div>
+    <div class="card"><div class="card-title">Eliminar bloque</div>
+      <div style="font-size:12px;color:#A32D2D;margin-bottom:12px">Atención: elimina el bloque y todos sus datos.</div>
       <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap">
-        <div class="form-group" style="flex:1;min-width:160px;margin:0">
-          <label class="form-label">ID del bloque a eliminar</label>
-          <input class="form-input" id="del-block-id" placeholder="Ej: F09B"
-            style="text-transform:uppercase" onkeydown="if(event.key==='Enter')deleteBlock()">
-        </div>
-        <button onclick="deleteBlock()"
-          style="padding:9px 20px;font-size:13px;background:#791F1F;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:inherit;white-space:nowrap">
-          Eliminar
-        </button>
+        <div class="form-group" style="flex:1;min-width:160px;margin:0"><label class="form-label">ID del bloque a eliminar</label><input class="form-input" id="del-block-id" placeholder="Ej: F09B" style="text-transform:uppercase" onkeydown="if(event.key==='Enter')deleteBlock()"></div>
+        <button onclick="deleteBlock()" style="padding:9px 20px;font-size:13px;background:#791F1F;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:inherit;white-space:nowrap">Eliminar</button>
       </div>
-    </div>
-  `;
+    </div>`;
 }
 
-// Expose to window (needed because module scope)
-Object.assign(window, {
-  tryLogin, logout, openLogin, closeLogin,
-  setNav, selBlockFn, closePanel, setBTab,
-  setStatus, addTask, deleteTask, submitLog, submitCargar,
-  addBlock, deleteBlock,
-  // These need to update module-scope var
-  set cargarBId(v) { cargarBId=v; },
+Object.assign(window,{
+  tryLogin,logout,openLogin,closeLogin,
+  setNav,selBlockFn,closePanel,setBTab,setETab,
+  setStatus,addTask,deleteTask,submitLog,submitCargar,
+  addBlock,deleteBlock,
+  addElement,deleteElement,submitElemLog,assignFromPanel,removeAssignment,
+  set cargarBId(v){cargarBId=v;},
 });
-
 init();
 </script>
 </body>
