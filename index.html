@@ -8,59 +8,59 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, -apple-system, sans-serif; background: #f5f4f0; color: #1a1a18; min-height: 100vh; }
     .header { background: #1a1a18; color: #f5f4f0; padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; }
-    .header-title { font-size: 14px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+    .header-title { font-size: 14px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; }
     .header-right { display: flex; align-items: center; gap: 10px; }
     .editor-badge { background: #639922; color: #EAF3DE; font-size: 11px; padding: 3px 9px; border-radius: 4px; }
-    .btn-header { background: transparent; border: 0.5px solid rgba(255,255,255,0.3); color: #f5f4f0; font-size: 12px; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-family: inherit; }
-    .btn-header:hover { background: rgba(255,255,255,0.1); }
-    .nav { background: #fff; border-bottom: 0.5px solid #dddcd6; display: flex; padding: 0 16px; overflow-x: auto; }
-    .nav-btn { padding: 10px 16px; font-size: 13px; background: none; border: none; cursor: pointer; color: #888780; border-bottom: 2px solid transparent; font-family: inherit; white-space: nowrap; transition: color 0.15s; }
+    .btn-header { background: transparent; border: .5px solid rgba(255,255,255,.3); color: #f5f4f0; font-size: 12px; padding: 5px 12px; border-radius: 6px; cursor: pointer; font-family: inherit; }
+    .btn-header:hover { background: rgba(255,255,255,.1); }
+    .nav { background: #fff; border-bottom: .5px solid #dddcd6; display: flex; padding: 0 16px; overflow-x: auto; }
+    .nav-btn { padding: 10px 16px; font-size: 13px; background: none; border: none; cursor: pointer; color: #888780; border-bottom: 2px solid transparent; font-family: inherit; white-space: nowrap; }
     .nav-btn.active { color: #1a1a18; border-bottom-color: #1a1a18; font-weight: 500; }
     .main { padding: 16px; max-width: 1100px; margin: 0 auto; }
-    .card { background: #fff; border-radius: 10px; border: 0.5px solid #dddcd6; padding: 16px; margin-bottom: 14px; }
+    .card { background: #fff; border-radius: 10px; border: .5px solid #dddcd6; padding: 16px; margin-bottom: 14px; }
     .card-title { font-size: 14px; font-weight: 500; margin-bottom: 14px; }
-    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 14px; }
-    @media (max-width: 600px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 8px; margin-bottom: 14px; }
+    @media(max-width:600px){.stats-grid{grid-template-columns:repeat(2,1fr);}}
     .stat-card { background: #f5f4f0; border-radius: 8px; padding: 11px 13px; }
-    .stat-label { font-size: 10px; color: #888780; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .stat-label { font-size: 10px; color: #888780; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 4px; }
     .stat-value { font-size: 22px; font-weight: 500; }
     .stat-sub { font-size: 11px; color: #888780; margin-top: 2px; }
     .prog-wrap { background: #f5f4f0; border-radius: 8px; padding: 11px 13px; margin-bottom: 14px; }
     .prog-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 5px; }
-    .prog-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #888780; }
+    .prog-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: #888780; }
     .prog-pct { font-size: 14px; font-weight: 500; }
     .prog-bar { height: 7px; background: #dddcd6; border-radius: 4px; overflow: hidden; }
-    .prog-fill { height: 100%; background: #639922; border-radius: 4px; transition: width 0.4s; }
-    .ship-wrap { background: #f5f4f0; border-radius: 10px; padding: 13px; margin-bottom: 14px; border: 0.5px solid #dddcd6; overflow-x: auto; }
-    .ship-lbl { font-size: 9px; color: #888780; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 9px; }
+    .prog-fill { height: 100%; background: #639922; border-radius: 4px; transition: width .4s; }
+    .ship-wrap { background: #f5f4f0; border-radius: 10px; padding: 13px; margin-bottom: 14px; border: .5px solid #dddcd6; overflow-x: auto; }
+    .ship-lbl { font-size: 9px; color: #888780; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 9px; }
     .deck-row { display: flex; gap: 4px; align-items: stretch; margin-bottom: 4px; min-width: fit-content; }
     .row-lbl { font-size: 9px; color: #888780; writing-mode: vertical-rl; display: flex; align-items: center; min-width: 14px; flex-shrink: 0; }
     .blocks-row { display: flex; gap: 4px; }
-    .block { width: 60px; flex-shrink: 0; border-radius: 6px; padding: 5px 3px; cursor: pointer; border: 1.5px solid; text-align: center; min-height: 60px; transition: transform 0.12s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+    .block { width: 60px; flex-shrink: 0; border-radius: 6px; padding: 5px 3px; cursor: pointer; border: 1.5px solid; text-align: center; min-height: 60px; transition: transform .12s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
     .block:hover { transform: scale(1.05); }
     .block.sel { outline: 2.5px solid #1a1a18; outline-offset: 1px; }
     .block-id { font-size: 10px; font-weight: 500; }
-    .mini-bar { width: 70%; height: 2px; background: rgba(0,0,0,0.15); border-radius: 1px; overflow: hidden; margin-top: 2px; }
-    .mini-fill { height: 100%; background: rgba(0,0,0,0.4); border-radius: 1px; }
-    .bow-block { width: 48px; flex-shrink: 0; border-radius: 6px; padding: 5px; cursor: pointer; border: 1.5px solid; text-align: center; min-height: 60px; transition: transform 0.12s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
+    .mini-bar { width: 70%; height: 2px; background: rgba(0,0,0,.15); border-radius: 1px; overflow: hidden; margin-top: 2px; }
+    .mini-fill { height: 100%; background: rgba(0,0,0,.4); border-radius: 1px; }
+    .bow-block { width: 48px; flex-shrink: 0; border-radius: 6px; padding: 5px; cursor: pointer; border: 1.5px solid; text-align: center; min-height: 60px; transition: transform .12s; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; }
     .bow-block:hover { transform: scale(1.05); }
     .bow-block.sel { outline: 2.5px solid #1a1a18; outline-offset: 1px; }
     .centerline { height: 1.5px; background: #c8c7c0; border-radius: 1px; margin: 2px 0 2px 14px; min-width: fit-content; }
     .legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 9px; }
     .leg-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #888780; }
     .leg-dot { width: 10px; height: 10px; border-radius: 2px; border: 1px solid; flex-shrink: 0; }
-    .panel { background: #fff; border: 0.5px solid #c0bfb8; border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
-    .panel-head { padding: 12px 14px; border-bottom: 0.5px solid #dddcd6; }
+    .panel { background: #fff; border: .5px solid #c0bfb8; border-radius: 10px; overflow: hidden; margin-bottom: 14px; }
+    .panel-head { padding: 12px 14px; border-bottom: .5px solid #dddcd6; }
     .panel-title-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
     .panel-title { font-size: 14px; font-weight: 500; line-height: 1.4; }
     .panel-close { background: none; border: none; cursor: pointer; color: #888780; font-size: 20px; padding: 0 4px; line-height: 1; flex-shrink: 0; }
     .status-row { display: flex; gap: 5px; flex-wrap: wrap; }
-    .status-btn { font-size: 11px; padding: 3px 10px; border-radius: 5px; cursor: pointer; border: 1px solid; background: transparent; font-family: inherit; transition: all 0.15s; }
-    .subtabs { display: flex; border-bottom: 0.5px solid #dddcd6; overflow-x: auto; }
-    .subtab { padding: 8px 13px; font-size: 12px; background: none; border: none; cursor: pointer; color: #888780; border-bottom: 2px solid transparent; margin-bottom: -0.5px; font-family: inherit; white-space: nowrap; }
+    .status-btn { font-size: 11px; padding: 3px 10px; border-radius: 5px; cursor: pointer; border: 1px solid; background: transparent; font-family: inherit; }
+    .subtabs { display: flex; border-bottom: .5px solid #dddcd6; overflow-x: auto; }
+    .subtab { padding: 8px 13px; font-size: 12px; background: none; border: none; cursor: pointer; color: #888780; border-bottom: 2px solid transparent; margin-bottom: -.5px; font-family: inherit; white-space: nowrap; }
     .subtab.active { color: #1a1a18; border-bottom-color: #1a1a18; font-weight: 500; }
     .panel-body { padding: 14px; }
-    .task-row { display: flex; align-items: center; gap: 10px; padding: 9px 10px; background: #f5f4f0; border-radius: 8px; margin-bottom: 5px; border: 0.5px solid #dddcd6; }
+    .task-row { display: flex; align-items: center; gap: 10px; padding: 9px 10px; background: #f5f4f0; border-radius: 8px; margin-bottom: 5px; border: .5px solid #dddcd6; }
     .task-info { flex: 1; min-width: 0; }
     .task-name { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .task-sub { font-size: 11px; color: #888780; margin-top: 2px; }
@@ -68,30 +68,39 @@
     .task-bar { height: 4px; background: #dddcd6; border-radius: 2px; overflow: hidden; margin-bottom: 2px; }
     .task-fill { height: 100%; background: #639922; border-radius: 2px; }
     .task-pct { font-size: 10px; color: #888780; text-align: right; }
-    .del-btn { background: none; border: none; cursor: pointer; color: #b8b7b0; font-size: 18px; padding: 0 3px; line-height: 1; flex-shrink: 0; }
+    .del-btn { background: none; border: none; cursor: pointer; color: #b8b7b0; font-size: 16px; padding: 0 3px; line-height: 1; flex-shrink: 0; }
     .del-btn:hover { color: #E24B4A; }
+    .edit-btn { background: none; border: .5px solid #c0bfb8; cursor: pointer; color: #888780; font-size: 11px; padding: 2px 8px; border-radius: 5px; flex-shrink: 0; font-family: inherit; }
+    .edit-btn:hover { background: #f5f4f0; color: #1a1a18; }
+    .save-btn { background: #3B6D11; border: none; cursor: pointer; color: #fff; font-size: 11px; padding: 3px 10px; border-radius: 5px; flex-shrink: 0; font-family: inherit; }
+    .save-btn:hover { background: #27500A; }
+    .cancel-btn { background: none; border: .5px solid #c0bfb8; cursor: pointer; color: #888780; font-size: 11px; padding: 2px 8px; border-radius: 5px; flex-shrink: 0; font-family: inherit; }
+    .inline-input { width: 72px; font-size: 13px; padding: 4px 7px; border: .5px solid #639922; border-radius: 6px; background: #fff; font-family: inherit; text-align: right; }
+    .inline-input:focus { outline: none; box-shadow: 0 0 0 2px rgba(99,153,34,.15); }
     .form-group { margin-bottom: 10px; }
-    .form-label { font-size: 10px; color: #888780; margin-bottom: 3px; display: block; text-transform: uppercase; letter-spacing: 0.06em; }
-    .form-input { width: 100%; font-size: 13px; padding: 8px 10px; border: 0.5px solid #c0bfb8; border-radius: 8px; background: #fff; color: #1a1a18; font-family: inherit; }
-    .form-input:focus { outline: none; border-color: #639922; box-shadow: 0 0 0 2px rgba(99,153,34,0.15); }
+    .form-label { font-size: 10px; color: #888780; margin-bottom: 3px; display: block; text-transform: uppercase; letter-spacing: .06em; }
+    .form-input { width: 100%; font-size: 13px; padding: 8px 10px; border: .5px solid #c0bfb8; border-radius: 8px; background: #fff; color: #1a1a18; font-family: inherit; }
+    .form-input:focus { outline: none; border-color: #639922; box-shadow: 0 0 0 2px rgba(99,153,34,.15); }
     select.form-input { cursor: pointer; }
     .form-grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 10px; }
     .form-grid-3 { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; }
-    @media (max-width: 480px) { .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; } }
+    .form-grid-4 { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 10px; }
+    @media(max-width:480px){.form-grid-2,.form-grid-3,.form-grid-4{grid-template-columns:1fr;}}
     .btn-primary { display: block; width: 100%; padding: 10px; font-size: 13px; font-weight: 500; background: #3B6D11; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; margin-top: 6px; }
     .btn-primary:hover { background: #27500A; }
-    .btn-secondary { background: transparent; border: 0.5px solid #c0bfb8; color: #1a1a18; font-size: 12px; padding: 7px 16px; border-radius: 8px; cursor: pointer; font-family: inherit; }
-    .btn-secondary:hover { background: #f5f4f0; }
-    .log-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: #f5f4f0; border-radius: 8px; margin-bottom: 5px; border: 0.5px solid #dddcd6; }
+    .btn-danger { display: block; width: 100%; padding: 10px; font-size: 13px; font-weight: 500; background: #791F1F; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; margin-top: 6px; }
+    .btn-danger:hover { background: #501313; }
+    .btn-secondary { background: transparent; border: .5px solid #c0bfb8; color: #1a1a18; font-size: 12px; padding: 7px 16px; border-radius: 8px; cursor: pointer; font-family: inherit; }
+    .log-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: #f5f4f0; border-radius: 8px; margin-bottom: 5px; border: .5px solid #dddcd6; }
     .log-info { flex: 1; min-width: 0; }
     .log-name { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .log-sub { font-size: 10px; color: #888780; margin-top: 2px; }
-    .log-qty { width: 72px; font-size: 13px; padding: 6px 8px; border: 0.5px solid #c0bfb8; border-radius: 6px; background: #fff; font-family: inherit; text-align: right; flex-shrink: 0; }
+    .log-qty { width: 72px; font-size: 13px; padding: 6px 8px; border: .5px solid #c0bfb8; border-radius: 6px; background: #fff; font-family: inherit; text-align: right; flex-shrink: 0; }
     .log-qty:focus { outline: none; border-color: #639922; }
     .table-wrap { overflow-x: auto; }
     table { width: 100%; border-collapse: collapse; font-size: 12px; }
-    th { text-align: left; padding: 7px 10px; color: #888780; font-weight: 400; font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 0.5px solid #dddcd6; white-space: nowrap; }
-    td { padding: 9px 10px; border-bottom: 0.5px solid #dddcd6; color: #1a1a18; vertical-align: middle; }
+    th { text-align: left; padding: 7px 10px; color: #888780; font-weight: 400; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; border-bottom: .5px solid #dddcd6; white-space: nowrap; }
+    td { padding: 9px 10px; border-bottom: .5px solid #dddcd6; color: #1a1a18; vertical-align: middle; }
     tr:last-child td { border-bottom: none; }
     .pcell { display: flex; align-items: center; gap: 8px; }
     .pbar { flex: 1; height: 4px; background: #dddcd6; border-radius: 2px; overflow: hidden; min-width: 60px; }
@@ -99,43 +108,52 @@
     .pnum { font-size: 11px; color: #888780; min-width: 32px; text-align: right; }
     .chart-bars { display: flex; gap: 3px; align-items: flex-end; height: 80px; margin-bottom: 4px; }
     .chart-bar { flex: 1; border-radius: 2px 2px 0 0; background: #97C459; min-width: 6px; }
+    .chart-bar.tarde { background: #378ADD; }
     .chart-dates { display: flex; gap: 3px; }
     .chart-date { flex: 1; font-size: 8px; color: #888780; text-align: center; overflow: hidden; white-space: nowrap; }
-    .proj-box { background: #E6F1FB; border: 0.5px solid #B5D4F4; border-radius: 8px; padding: 12px 14px; margin-bottom: 14px; }
-    .proj-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #0C447C; margin-bottom: 3px; }
+    .proj-box { background: #E6F1FB; border: .5px solid #B5D4F4; border-radius: 8px; padding: 12px 14px; margin-bottom: 14px; }
+    .proj-lbl { font-size: 10px; text-transform: uppercase; letter-spacing: .08em; color: #0C447C; margin-bottom: 3px; }
     .proj-val { font-size: 16px; font-weight: 500; color: #185FA5; }
     .toast { padding: 10px 14px; border-radius: 8px; font-size: 12px; margin-bottom: 12px; }
     .toast.ok  { background: #27500A; color: #EAF3DE; }
     .toast.err { background: #791F1F; color: #FCEBEB; }
-    .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 20px; }
-    .modal { background: #fff; border-radius: 12px; padding: 24px; width: 100%; max-width: 360px; border: 0.5px solid #dddcd6; }
+    .modal-bg { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: flex; align-items: center; justify-content: center; z-index: 200; padding: 20px; }
+    .modal { background: #fff; border-radius: 12px; padding: 24px; width: 100%; max-width: 360px; border: .5px solid #dddcd6; }
     .modal-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
     .modal-sub { font-size: 12px; color: #888780; margin-bottom: 16px; }
-    .empty { text-align: center; padding: 20px; font-size: 12px; color: #888780; border: 0.5px dashed #c0bfb8; border-radius: 8px; }
+    .empty { text-align: center; padding: 20px; font-size: 12px; color: #888780; border: .5px dashed #c0bfb8; border-radius: 8px; }
     .loading { text-align: center; padding: 60px 20px; color: #888780; font-size: 14px; }
-    .error-box { background: #FCEBEB; border: 0.5px solid #F7C1C1; border-radius: 8px; padding: 14px; margin: 20px; font-size: 13px; color: #501313; line-height: 1.6; }
-    .hist-group { margin-bottom: 14px; }
-    .hist-header { font-size: 11px; font-weight: 500; color: #888780; margin-bottom: 5px; display: flex; justify-content: space-between; padding-bottom: 4px; border-bottom: 0.5px solid #dddcd6; }
-    .hist-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; font-size: 12px; color: #888780; border-bottom: 0.5px solid #f0efd8; }
-    .hist-row:last-child { border-bottom: none; }
-    .section-title { font-size: 10px; color: #888780; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
-    /* Elementos */
-    .elem-card { background: #f5f4f0; border: 0.5px solid #dddcd6; border-radius: 8px; padding: 12px 13px; margin-bottom: 8px; }
+    .error-box { background: #FCEBEB; border: .5px solid #F7C1C1; border-radius: 8px; padding: 14px; margin: 20px; font-size: 13px; color: #501313; line-height: 1.6; }
+    .section-title { font-size: 10px; color: #888780; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+    .tab-header { background: #fff; border-radius: 8px 8px 0 0; border: .5px solid #dddcd6; border-bottom: none; display: flex; overflow-x: auto; }
+    .tab-panel { background: #fff; border: .5px solid #dddcd6; border-radius: 0 0 10px 10px; padding: 14px; margin-bottom: 14px; }
+    .elem-card { background: #f5f4f0; border: .5px solid #dddcd6; border-radius: 8px; padding: 12px 13px; margin-bottom: 8px; }
     .elem-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
     .elem-name { font-size: 13px; font-weight: 500; }
-    .elem-nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 8px; }
-    @media (max-width: 500px) { .elem-nums { grid-template-columns: repeat(2, 1fr); } }
-    .en-item { text-align: center; background: #fff; border-radius: 6px; padding: 6px 4px; border: 0.5px solid #dddcd6; }
+    .elem-nums { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; margin-bottom: 8px; }
+    @media(max-width:500px){.elem-nums{grid-template-columns:repeat(2,1fr);}}
+    .en-item { text-align: center; background: #fff; border-radius: 6px; padding: 6px 4px; border: .5px solid #dddcd6; }
     .en-lbl { font-size: 9px; color: #888780; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px; }
     .en-val { font-size: 16px; font-weight: 500; }
-    .en-sub { font-size: 9px; color: #888780; }
-    .dbl-bar { display: flex; height: 5px; border-radius: 3px; background: #dddcd6; overflow: hidden; }
-    .dbl-prod { background: #97C459; transition: width 0.4s; }
-    .stock-ok   { background: #EAF3DE; border: 0.5px solid #C0DD97; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #27500A; white-space: nowrap; }
-    .stock-warn { background: #FAEEDA; border: 0.5px solid #FAC775; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #633806; white-space: nowrap; }
-    .stock-none { background: #f5f4f0; border: 0.5px solid #dddcd6; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #888780; white-space: nowrap; }
-    .tab-panel { background: #fff; border: 0.5px solid #dddcd6; border-radius: 0 0 10px 10px; padding: 14px; margin-bottom: 14px; }
-    .tab-header { background: #fff; border-radius: 8px 8px 0 0; border: 0.5px solid #dddcd6; border-bottom: none; display: flex; overflow-x: auto; }
+    .stock-ok   { background: #EAF3DE; border: .5px solid #C0DD97; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #27500A; white-space: nowrap; }
+    .stock-warn { background: #FAEEDA; border: .5px solid #FAC775; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #633806; white-space: nowrap; }
+    .stock-none { background: #f5f4f0; border: .5px solid #dddcd6; border-radius: 6px; padding: 2px 8px; font-size: 11px; color: #888780; white-space: nowrap; }
+    .badge { font-size: 10px; padding: 2px 8px; border-radius: 4px; white-space: nowrap; display: inline-block; }
+    .badge-m { background: #EAF3DE; color: #27500A; border: .5px solid #C0DD97; }
+    .badge-t { background: #E6F1FB; color: #185FA5; border: .5px solid #B5D4F4; }
+    .hist-group { margin-bottom: 14px; }
+    .hist-header { font-size: 11px; font-weight: 500; color: #888780; display: flex; justify-content: space-between; padding-bottom: 5px; border-bottom: .5px solid #dddcd6; margin-bottom: 4px; }
+    .hist-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; font-size: 12px; color: #888780; border-bottom: .5px solid #f0efd8; }
+    .hist-row:last-child { border-bottom: none; }
+    .week-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .week-table th { background: #f5f4f0; text-align: center; padding: 7px 10px; color: #888780; font-weight: 400; font-size: 10px; text-transform: uppercase; letter-spacing: .08em; border-bottom: .5px solid #dddcd6; }
+    .week-table td { text-align: center; padding: 9px 10px; border-bottom: .5px solid #dddcd6; }
+    .week-table tr:last-child td { border-bottom: none; }
+    .week-table td:first-child { text-align: left; font-weight: 500; }
+    .demo-box { background: #FAEEDA; border: .5px solid #FAC775; border-radius: 8px; padding: 14px; margin-bottom: 16px; }
+    .demo-box p { font-size: 13px; color: #633806; margin-bottom: 10px; line-height: 1.5; }
+    .btn-demo { display: block; width: 100%; padding: 10px; font-size: 13px; font-weight: 500; background: #BA7517; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-family: inherit; }
+    .btn-demo:hover { background: #854F0B; }
   </style>
 </head>
 <body>
@@ -163,7 +181,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebas
 import { getFirestore, doc, getDoc, setDoc, onSnapshot } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
 
 /* ================================================================
-   CONFIGURACIÓN — COMPLETAR CON TUS DATOS DE FIREBASE
+   CONFIGURACIÓN — TUS DATOS DE FIREBASE
 ================================================================ */
 const FIREBASE_CONFIG = {
   apiKey:            "AIzaSyCW8ub-1csVMipPVYNDGGL_lRlPikK-x98",
@@ -173,7 +191,7 @@ const FIREBASE_CONFIG = {
   messagingSenderId: "879206224362",
   appId:             "1:879206224362:web:d6146dc6153f3af995a293"
 };
-const EDITOR_PASSWORD = "dique2026";   // ← CAMBIAR ESTA CONTRASEÑA
+const EDITOR_PASSWORD = "dique2026";
 /* ================================================================ */
 
 const STATUS = {
@@ -186,21 +204,19 @@ const DEFAULT_BLOCKS = [
   'F01E','F02E','F03E','F04E','F05E','F06E','F07E','F08E',
   'VOPP','VOPR'
 ];
+const SHIFTS = ['mañana','tarde'];
 
 // ── Estado ────────────────────────────────────────────────────────
-let db, blockList=[], blockData={}, elements=[];
-let isEditor   = localStorage.getItem('dique_editor')==='true';
-let view       = 'mapa';
-let selBlock   = null;
-let bTab       = 'tasks';
-let cargarBId  = '';
-let eTab       = 'stock';
-let toastInfo  = null;
-let renderPending = false;
+let db, blockList=[], blockData={}, elements=[], taskDefs=[], taskLogs=[], weeklyStaff=[];
+let isEditor = localStorage.getItem('dique_editor')==='true';
+let view='mapa', selBlock=null, bTab='tasks', eTab='stock', tpTab='defs';
+let editingTermId=null, editingTaskLogId=null, editingStaffId=null;
+let toastInfo=null, renderPending=false;
 
-// ── Helpers genéricos ─────────────────────────────────────────────
+// ── Helpers generales ─────────────────────────────────────────────
 const todayStr = () => new Date().toISOString().slice(0,10);
 const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const uid = () => Date.now() + Math.random()*1000|0;
 
 // ── Helpers bloques ───────────────────────────────────────────────
 const tDone = t => (t.logs||[]).reduce((s,l)=>s+(+l.qty||0),0);
@@ -208,32 +224,12 @@ const tPct  = t => t.total ? Math.min(100,Math.round(tDone(t)/t.total*100)) : 0;
 function bProg(id) {
   const b=blockData[id]||{status:'none',tasks:[]};
   if(!b.tasks?.length) return {done:0,total:0,pct:b.status==='done'?100:0};
-  let d=0,t=0; b.tasks.forEach(tk=>{d+=tDone(tk);t+=(+tk.total||0);}); 
+  let d=0,t=0; b.tasks.forEach(tk=>{d+=tDone(tk);t+=(+tk.total||0);});
   return {done:d,total:t,pct:t?Math.round(d/t*100):0};
 }
 function gProg() {
   let d=0,t=0; blockList.forEach(id=>{const p=bProg(id);d+=p.done;t+=p.total;});
   return {done:d,total:t,pct:t?Math.round(d/t*100):0};
-}
-function dailyData() {
-  const map={};
-  blockList.forEach(id=>{(blockData[id]?.tasks||[]).forEach(tk=>{(tk.logs||[]).forEach(l=>{map[l.date]=(map[l.date]||0)+(+l.qty||0);});});});
-  return Object.entries(map).sort(([a],[b])=>a.localeCompare(b));
-}
-function todayUnits() {
-  const td=todayStr();let u=0;
-  blockList.forEach(id=>{(blockData[id]?.tasks||[]).forEach(tk=>{(tk.logs||[]).forEach(l=>{if(l.date===td)u+=(+l.qty||0);});});});
-  return u;
-}
-function avgDaily(){const d=dailyData();return d.length?Math.round(gProg().done/d.length):0;}
-function projFinish(){
-  const daily=dailyData();if(daily.length<2)return null;
-  const gp=gProg();if(!gp.total||gp.done>=gp.total)return null;
-  const avg=gp.done/daily.length;if(!avg)return null;
-  const rem=Math.ceil((gp.total-gp.done)/avg);
-  const d=new Date();let added=0;
-  while(added<rem){d.setDate(d.getDate()+1);const w=d.getDay();if(w!==0&&w!==6)added++;}
-  return d.toLocaleDateString('es-AR',{day:'numeric',month:'long',year:'numeric'});
 }
 
 // ── Helpers elementos ─────────────────────────────────────────────
@@ -246,31 +242,68 @@ function blockAssigned(blockId,eid){
   return e?(e.assignments||[]).filter(a=>a.blockId===blockId).reduce((s,a)=>s+(+a.qty||0),0):0;
 }
 function elemGlobalProg(){
-  let prod=0,total=0;elements.forEach(e=>{prod+=eProd(e);total+=(+e.total||0);});
-  return{prod,total,pct:total?Math.round(prod/total*100):0};
+  let prod=0,total=0; elements.forEach(e=>{prod+=eProd(e);total+=(+e.total||0);});
+  return {prod,total,pct:total?Math.round(prod/total*100):0};
 }
+function termByDay() {
+  const map={};
+  elements.forEach(e=>(e.logs||[]).forEach(l=>{map[l.date]=(map[l.date]||0)+(+l.qty||0);}));
+  return Object.entries(map).sort(([a],[b])=>a.localeCompare(b));
+}
+function todayTerminados(){
+  const td=todayStr(); let u=0;
+  elements.forEach(e=>(e.logs||[]).forEach(l=>{if(l.date===td)u+=(+l.qty||0);}));
+  return u;
+}
+
+// ── Helpers tareas ────────────────────────────────────────────────
+function getWeekNum(dateStr){
+  const d=new Date(dateStr+'T12:00:00');
+  const dow=d.getDay()||7;
+  d.setDate(d.getDate()+4-dow);
+  const ys=new Date(d.getFullYear(),0,1);
+  return {week:Math.ceil(((d-ys)/86400000+1)/7),year:d.getFullYear()};
+}
+function tasksByWeek(){
+  const map={};
+  taskLogs.forEach(log=>{
+    const {week,year}=getWeekNum(log.date);
+    const key=`${year}-W${String(week).padStart(2,'0')}`;
+    if(!map[key])map[key]={week,year,key,mañana:0,tarde:0};
+    if(log.shift==='mañana')map[key].mañana+=(+log.qty||0);
+    else map[key].tarde+=(+log.qty||0);
+  });
+  return Object.values(map).sort((a,b)=>a.key.localeCompare(b.key));
+}
+function getStaff(week,year){return weeklyStaff.find(s=>s.week===week&&s.year===year)||null;}
 
 // ── Firebase ──────────────────────────────────────────────────────
 async function init(){
   let app;
   try{app=initializeApp(FIREBASE_CONFIG);}
-  catch(e){document.getElementById('root').innerHTML=`<div class="error-box"><strong>Error de configuración</strong><br>Verificá los datos de Firebase.<br><br>${e.message}</div>`;return;}
+  catch(e){document.getElementById('root').innerHTML=`<div class="error-box"><strong>Error de configuración Firebase</strong><br>${e.message}</div>`;return;}
   db=getFirestore(app);
   try{
     const cfgSnap=await getDoc(doc(db,'config','settings'));
-    if(cfgSnap.exists()&&cfgSnap.data().blocks?.length){blockList=cfgSnap.data().blocks;}
+    if(cfgSnap.exists()&&cfgSnap.data().blocks?.length)blockList=cfgSnap.data().blocks;
     else{blockList=[...DEFAULT_BLOCKS];await setDoc(doc(db,'config','settings'),{blocks:blockList});}
-  }catch(e){
-    document.getElementById('root').innerHTML=`<div class="error-box"><strong>No se pudo conectar con Firebase</strong><br>Revisá las reglas de Firestore.<br><br>${e.message}</div>`;return;
-  }
+  }catch(e){document.getElementById('root').innerHTML=`<div class="error-box"><strong>No se pudo conectar con Firebase</strong><br>Revisá las reglas de Firestore.<br><br>${e.message}</div>`;return;}
+
   blockList.forEach(id=>{
     onSnapshot(doc(db,'blocks',id),snap=>{blockData[id]=snap.exists()?snap.data():{status:'none',tasks:[]};scheduleRender();});
   });
   onSnapshot(doc(db,'config','elements'),snap=>{elements=snap.exists()?(snap.data().list||[]):[];scheduleRender();});
+  onSnapshot(doc(db,'config','taskdefs'),snap=>{taskDefs=snap.exists()?(snap.data().list||[]):[];scheduleRender();});
+  onSnapshot(doc(db,'config','tasklogs'),snap=>{taskLogs=snap.exists()?(snap.data().list||[]):[];scheduleRender();});
+  onSnapshot(doc(db,'config','weeklystaff'),snap=>{weeklyStaff=snap.exists()?(snap.data().list||[]):[];scheduleRender();});
 }
-async function saveBlock(id){await setDoc(doc(db,'blocks',id),blockData[id]);}
-async function saveConfig(){await setDoc(doc(db,'config','settings'),{blocks:blockList});}
-async function saveElements(){await setDoc(doc(db,'config','elements'),{list:elements});}
+
+async function saveBlock(id)      {await setDoc(doc(db,'blocks',id),blockData[id]);}
+async function saveConfig()       {await setDoc(doc(db,'config','settings'),{blocks:blockList});}
+async function saveElements()     {await setDoc(doc(db,'config','elements'),{list:elements});}
+async function saveTaskDefs()     {await setDoc(doc(db,'config','taskdefs'),{list:taskDefs});}
+async function saveTaskLogs()     {await setDoc(doc(db,'config','tasklogs'),{list:taskLogs});}
+async function saveWeeklyStaff()  {await setDoc(doc(db,'config','weeklystaff'),{list:weeklyStaff});}
 function scheduleRender(){if(renderPending)return;renderPending=true;setTimeout(()=>{renderPending=false;render();},60);}
 
 // ── Auth ──────────────────────────────────────────────────────────
@@ -284,11 +317,15 @@ function openLogin(){document.getElementById('modal-login').style.display='block
 function closeLogin(){document.getElementById('modal-login').style.display='none';}
 function toast(msg,type='ok'){toastInfo={msg,type};render();setTimeout(()=>{toastInfo=null;render();},3000);}
 
-// ── Acciones bloques ──────────────────────────────────────────────
+// ── Nav / panel ───────────────────────────────────────────────────
 function setNav(v){view=v;if(v!=='mapa')selBlock=null;render();}
 function selBlockFn(id){selBlock=selBlock===id?null:id;bTab='tasks';render();}
 function closePanel(){selBlock=null;render();}
 function setBTab(t){bTab=t;render();}
+function setETab(t){eTab=t;render();}
+function setTpTab(t){tpTab=t;render();}
+
+// ── Acciones bloques ──────────────────────────────────────────────
 async function setStatus(id,s){if(!blockData[id])blockData[id]={status:'none',tasks:[]};blockData[id].status=s;await saveBlock(id);}
 async function addTask(){
   const name=document.getElementById('nt-name')?.value.trim();
@@ -296,11 +333,11 @@ async function addTask(){
   if(!name||!(total>0)||!selBlock)return toast('Completá nombre y cantidad total','err');
   if(!blockData[selBlock])blockData[selBlock]={status:'none',tasks:[]};
   if(!blockData[selBlock].tasks)blockData[selBlock].tasks=[];
-  blockData[selBlock].tasks.push({id:Date.now(),name,total,logs:[]});
+  blockData[selBlock].tasks.push({id:uid(),name,total,logs:[]});
   await saveBlock(selBlock);bTab='tasks';toast('Tarea agregada');
 }
 async function deleteTask(id,tid){
-  if(!confirm('¿Eliminar esta tarea y todos sus registros?'))return;
+  if(!confirm('¿Eliminar esta tarea?'))return;
   blockData[id].tasks=blockData[id].tasks.filter(t=>t.id!==tid);
   await saveBlock(id);toast('Tarea eliminada');
 }
@@ -310,23 +347,11 @@ async function submitLog(){
   const b=blockData[selBlock];let any=false;
   b.tasks.forEach(t=>{
     const q=parseInt(document.getElementById('lq-'+t.id)?.value||0);
-    if(q>0){if(!t.logs)t.logs=[];const ex=t.logs.find(l=>l.date===date);if(ex)ex.qty=(+ex.qty||0)+q;else{t.logs.push({date,qty:q});t.logs.sort((a,b)=>a.date.localeCompare(b.date));}any=true;}
-  });
-  if(!any)return toast('Ingresá al menos una cantidad mayor a 0','err');
-  await saveBlock(selBlock);bTab='tasks';toast('Avance registrado');
-}
-async function submitCargar(){
-  const bId=document.getElementById('car-block')?.value;
-  const date=document.getElementById('car-date')?.value||todayStr();
-  if(!bId)return toast('Seleccioná un bloque','err');
-  const b=blockData[bId];if(!b?.tasks?.length)return toast('Este bloque no tiene tareas','err');
-  let any=false;
-  b.tasks.forEach(t=>{
-    const q=parseInt(document.getElementById('cq-'+t.id)?.value||0);
-    if(q>0){if(!t.logs)t.logs=[];const ex=t.logs.find(l=>l.date===date);if(ex)ex.qty=(+ex.qty||0)+q;else{t.logs.push({date,qty:q});t.logs.sort((a,b)=>a.date.localeCompare(b.date));}any=true;}
+    if(q>0){if(!t.logs)t.logs=[];const ex=t.logs.find(l=>l.date===date);
+      if(ex)ex.qty=(+ex.qty||0)+q;else{t.logs.push({id:uid(),date,qty:q});t.logs.sort((a,b)=>a.date.localeCompare(b.date));}any=true;}
   });
   if(!any)return toast('Ingresá al menos una cantidad','err');
-  await saveBlock(bId);toast('Avance guardado');
+  await saveBlock(selBlock);bTab='tasks';toast('Avance registrado');
 }
 async function addBlock(){
   const rawId=document.getElementById('new-block-id')?.value.trim().toUpperCase();
@@ -344,32 +369,24 @@ async function deleteBlock(){
   await saveConfig();document.getElementById('del-block-id').value='';toast('Bloque eliminado');
 }
 
-// ── Acciones elementos ────────────────────────────────────────────
-function setETab(t){eTab=t;render();}
+// ── Acciones elementos (Avance total) ─────────────────────────────
 async function addElement(){
   const name=document.getElementById('en-name')?.value.trim();
   const total=parseInt(document.getElementById('en-total')?.value);
   if(!name||!(total>0))return toast('Completá nombre y cantidad total','err');
-  if(elements.find(e=>e.name.toLowerCase()===name.toLowerCase()))return toast('Ya existe un elemento con ese nombre','err');
-  elements.push({id:Date.now(),name,total,logs:[],assignments:[]});
+  if(elements.find(e=>e.name.toLowerCase()===name.toLowerCase()))return toast('Ya existe ese elemento','err');
+  elements.push({id:uid(),name,total,logs:[],assignments:[]});
   await saveElements();
   document.getElementById('en-name').value='';document.getElementById('en-total').value='';
   eTab='stock';toast('Elemento "'+name+'" agregado');
 }
 async function deleteElement(eid){
   const e=elements.find(x=>x.id===eid);if(!e)return;
-  if(!confirm(`¿Eliminar "${e.name}" y todos sus registros?`))return;
-  elements=elements.filter(x=>x.id!==eid);await saveElements();toast('Elemento eliminado');
-}
-async function submitElemLog(){
-  const date=document.getElementById('el-date')?.value||todayStr();
-  let any=false;
-  elements.forEach(e=>{
-    const q=parseInt(document.getElementById('eq-'+e.id)?.value||0);
-    if(q>0){if(!e.logs)e.logs=[];const ex=e.logs.find(l=>l.date===date);if(ex)ex.qty=(+ex.qty||0)+q;else{e.logs.push({date,qty:q});e.logs.sort((a,b)=>a.date.localeCompare(b.date));}any=true;}
-  });
-  if(!any)return toast('Ingresá al menos una cantidad','err');
-  await saveElements();eTab='stock';toast('Producción del día registrada');
+  if(!confirm(`¿Eliminar "${e.name}" y todos sus datos?`))return;
+  elements=elements.filter(x=>x.id!==eid);
+  taskDefs=taskDefs.filter(d=>d.elementId!==eid);
+  taskLogs=taskLogs.filter(l=>l.elementId!==eid);
+  await saveElements();await saveTaskDefs();await saveTaskLogs();toast('Elemento eliminado');
 }
 async function assignFromPanel(){
   const eid=parseInt(document.getElementById('bp-elem')?.value);
@@ -377,19 +394,189 @@ async function assignFromPanel(){
   if(!eid||!(qty>0)||!selBlock)return toast('Completá todos los campos','err');
   const e=elements.find(x=>x.id===eid);if(!e)return;
   const avail=eAvail(e);
-  if(qty>avail)return toast(`Solo hay ${avail} ${e.name} disponibles en stock`,'err');
+  if(qty>avail)return toast(`Solo hay ${avail} ${e.name} disponibles`,'err');
   if(!e.assignments)e.assignments=[];
-  e.assignments.push({blockId:selBlock,qty,date:todayStr()});
+  e.assignments.push({id:uid(),blockId:selBlock,qty,date:todayStr()});
   await saveElements();document.getElementById('bp-qty').value='';
   toast(`${qty} ${e.name} asignados a ${selBlock}`);
 }
-async function removeAssignment(eid,idx){
-  const e=elements.find(x=>x.id===eid);if(!e||!e.assignments)return;
+async function removeAssignment(eid,aid){
+  const e=elements.find(x=>x.id===eid);if(!e)return;
   if(!confirm('¿Quitar esta asignación? Las unidades vuelven al stock.'))return;
-  e.assignments.splice(idx,1);await saveElements();toast('Asignación eliminada, unidades devueltas al stock');
+  e.assignments=e.assignments.filter(a=>a.id!==aid);
+  await saveElements();toast('Asignación eliminada');
 }
 
-// ── Render ────────────────────────────────────────────────────────
+// ── Acciones Elementos terminados ──────────────────────────────────
+async function addTerminado(){
+  const eid=parseInt(document.getElementById('term-elem')?.value);
+  const date=document.getElementById('term-date')?.value||todayStr();
+  const qty=parseInt(document.getElementById('term-qty')?.value||0);
+  if(!eid||!(qty>0))return toast('Seleccioná un elemento e ingresá la cantidad','err');
+  const e=elements.find(x=>x.id===eid);if(!e)return;
+  if(!e.logs)e.logs=[];
+  e.logs.push({id:uid(),date,qty});
+  e.logs.sort((a,b)=>a.date.localeCompare(b.date));
+  await saveElements();
+  document.getElementById('term-qty').value='';
+  toast(`${qty} ${e.name} registrados para el ${date}`);
+}
+function editTerminado(eid,lid){editingTermId=`${eid}_${lid}`;render();}
+function cancelEditTerm(){editingTermId=null;render();}
+async function saveTerminado(eid,lid){
+  const newQty=parseInt(document.getElementById('term-edit-qty')?.value||0);
+  if(!(newQty>0))return toast('La cantidad debe ser mayor a 0','err');
+  const e=elements.find(x=>x.id===eid);if(!e)return;
+  const log=e.logs.find(l=>l.id===lid);if(log)log.qty=newQty;
+  await saveElements();editingTermId=null;toast('Registro actualizado');
+}
+async function deleteTerminado(eid,lid){
+  if(!confirm('¿Eliminar este registro?'))return;
+  const e=elements.find(x=>x.id===eid);if(!e)return;
+  e.logs=e.logs.filter(l=>l.id!==lid);
+  await saveElements();toast('Registro eliminado');
+}
+
+// ── Acciones Tareas por elemento ───────────────────────────────────
+async function addTaskDef(){
+  const eid=parseInt(document.getElementById('td-elem')?.value);
+  const name=document.getElementById('td-name')?.value.trim();
+  if(!eid||!name)return toast('Seleccioná elemento e ingresá el nombre de la tarea','err');
+  const e=elements.find(x=>x.id===eid);if(!e)return;
+  if(taskDefs.find(d=>d.elementId===eid&&d.name.toLowerCase()===name.toLowerCase()))
+    return toast('Ya existe esa tarea para este elemento','err');
+  taskDefs.push({id:uid(),elementId:eid,elementName:e.name,name});
+  await saveTaskDefs();document.getElementById('td-name').value='';toast('Tarea "'+name+'" agregada');
+}
+async function deleteTaskDef(id){
+  if(!confirm('¿Eliminar esta tarea? Se borrarán también sus registros de avance.'))return;
+  taskDefs=taskDefs.filter(d=>d.id!==id);
+  taskLogs=taskLogs.filter(l=>l.taskDefId!==id);
+  await saveTaskDefs();await saveTaskLogs();toast('Tarea eliminada');
+}
+async function addTaskLog(){
+  const eid=parseInt(document.getElementById('tl-elem')?.value);
+  const tdid=parseInt(document.getElementById('tl-task')?.value);
+  const shift=document.getElementById('tl-shift')?.value;
+  const date=document.getElementById('tl-date')?.value||todayStr();
+  const qty=parseInt(document.getElementById('tl-qty')?.value||0);
+  if(!eid||!tdid||!shift||!(qty>0))return toast('Completá todos los campos','err');
+  const e=elements.find(x=>x.id===eid);
+  const td=taskDefs.find(x=>x.id===tdid);
+  if(!e||!td)return;
+  taskLogs.push({id:uid(),date,elementId:eid,elementName:e.name,taskDefId:tdid,taskName:td.name,shift,qty});
+  taskLogs.sort((a,b)=>a.date.localeCompare(b.date));
+  await saveTaskLogs();
+  document.getElementById('tl-qty').value='';
+  toast('Avance de tarea registrado');
+}
+function editTaskLog(id){editingTaskLogId=id;render();}
+function cancelEditTaskLog(){editingTaskLogId=null;render();}
+async function saveTaskLog(id){
+  const newQty=parseInt(document.getElementById('tl-edit-qty')?.value||0);
+  if(!(newQty>0))return toast('La cantidad debe ser mayor a 0','err');
+  const log=taskLogs.find(l=>l.id===id);if(log)log.qty=newQty;
+  await saveTaskLogs();editingTaskLogId=null;toast('Registro actualizado');
+}
+async function deleteTaskLog(id){
+  if(!confirm('¿Eliminar este registro de tarea?'))return;
+  taskLogs=taskLogs.filter(l=>l.id!==id);
+  await saveTaskLogs();toast('Registro eliminado');
+}
+function updateTaskSelect(){
+  const eid=parseInt(document.getElementById('tl-elem')?.value);
+  const sel=document.getElementById('tl-task');
+  if(!sel)return;
+  const defs=taskDefs.filter(d=>d.elementId===eid);
+  sel.innerHTML=`<option value="">— Tarea —</option>${defs.map(d=>`<option value="${d.id}">${esc(d.name)}</option>`).join('')}`;
+}
+async function addWeeklyStaff(){
+  const week=parseInt(document.getElementById('ws-week')?.value);
+  const year=parseInt(document.getElementById('ws-year')?.value||new Date().getFullYear());
+  const man=parseInt(document.getElementById('ws-man')?.value||0);
+  const tar=parseInt(document.getElementById('ws-tar')?.value||0);
+  if(!(week>0&&week<=53))return toast('Ingresá un número de semana válido (1-53)','err');
+  if(!(man>=0&&tar>=0&&(man+tar)>0))return toast('Ingresá al menos un operario','err');
+  const existing=weeklyStaff.find(s=>s.week===week&&s.year===year);
+  if(existing){existing.mañana=man;existing.tarde=tar;}
+  else weeklyStaff.push({id:uid(),week,year,mañana:man,tarde:tar});
+  weeklyStaff.sort((a,b)=>a.year!==b.year?a.year-b.year:a.week-b.week);
+  await saveWeeklyStaff();toast(`Semana ${week} / ${year} guardada`);
+}
+function editStaff(id){editingStaffId=id;render();}
+function cancelEditStaff(){editingStaffId=null;render();}
+async function saveStaff(id){
+  const man=parseInt(document.getElementById('ws-edit-man')?.value||0);
+  const tar=parseInt(document.getElementById('ws-edit-tar')?.value||0);
+  const s=weeklyStaff.find(x=>x.id===id);
+  if(s){s.mañana=man;s.tarde=tar;}
+  await saveWeeklyStaff();editingStaffId=null;toast('Operarios actualizados');
+}
+async function deleteStaff(id){
+  if(!confirm('¿Eliminar este registro de operarios?'))return;
+  weeklyStaff=weeklyStaff.filter(s=>s.id!==id);
+  await saveWeeklyStaff();toast('Registro eliminado');
+}
+
+// ── Demo data ─────────────────────────────────────────────────────
+async function loadDemoData(){
+  if(!confirm('¿Cargar datos de demo? Esto sobreescribirá los datos actuales de elementos, tareas y operarios.'))return;
+  const workDays=[];const d=new Date();
+  while(workDays.length<14){d.setDate(d.getDate()-1);if(d.getDay()!==0&&d.getDay()!==6)workDays.push(d.toISOString().slice(0,10));}
+  workDays.reverse();
+  const qtyCan=[6,5,7,4,6,8,5,7,6,5,6,8,5,7];
+  const qtyCan2=[3,4,3,5,3,4,3,4,3,4,3,5,4,3];
+  const qtyVar=[5,4,6,5,4,5,6,4,5,4,5,6,4,5];
+  const qtyBar=[6,5,7,6,5,8,6,7,5,6,7,8,6,5];
+  const demoElements=[
+    {id:1001,name:'Candeleros',total:100,assignments:[],logs:workDays.map((date,i)=>({id:2000+i,date,qty:qtyCan[i]}))},
+    {id:1002,name:'Caños',total:50,assignments:[],logs:workDays.map((date,i)=>({id:2100+i,date,qty:qtyCan2[i]}))},
+    {id:1003,name:'Varillas',total:60,assignments:[],logs:workDays.map((date,i)=>({id:2200+i,date,qty:qtyVar[i]}))},
+    {id:1004,name:'Barandas',total:80,assignments:[],logs:workDays.map((date,i)=>({id:2300+i,date,qty:qtyBar[i]}))},
+  ];
+  const demoTaskDefs=[
+    {id:3001,elementId:1001,elementName:'Candeleros',name:'Cortar'},
+    {id:3002,elementId:1001,elementName:'Candeleros',name:'Trazar'},
+    {id:3003,elementId:1001,elementName:'Candeleros',name:'Amolar'},
+    {id:3004,elementId:1002,elementName:'Caños',name:'Cortar'},
+    {id:3005,elementId:1002,elementName:'Caños',name:'Doblar'},
+    {id:3006,elementId:1003,elementName:'Varillas',name:'Cortar'},
+    {id:3007,elementId:1003,elementName:'Varillas',name:'Marcar'},
+    {id:3008,elementId:1004,elementName:'Barandas',name:'Cortar'},
+    {id:3009,elementId:1004,elementName:'Barandas',name:'Soldar'},
+  ];
+  const qM=[4,3,5,4,3,4,5,3,4,5,4,6,3,5];
+  const qT=[3,2,4,3,2,3,4,2,3,4,3,4,2,4];
+  const demoTaskLogs=[];let lid=4000;
+  workDays.forEach((date,i)=>{
+    demoTaskLogs.push({id:lid++,date,elementId:1001,elementName:'Candeleros',taskDefId:3001,taskName:'Cortar',shift:'mañana',qty:qM[i]});
+    demoTaskLogs.push({id:lid++,date,elementId:1001,elementName:'Candeleros',taskDefId:3002,taskName:'Trazar',shift:'mañana',qty:Math.max(1,qM[i]-1)});
+    demoTaskLogs.push({id:lid++,date,elementId:1001,elementName:'Candeleros',taskDefId:3003,taskName:'Amolar',shift:'tarde',qty:qT[i]});
+    demoTaskLogs.push({id:lid++,date,elementId:1002,elementName:'Caños',taskDefId:3004,taskName:'Cortar',shift:'mañana',qty:Math.max(1,qM[i]-2)});
+    demoTaskLogs.push({id:lid++,date,elementId:1002,elementName:'Caños',taskDefId:3005,taskName:'Doblar',shift:'tarde',qty:Math.max(1,qT[i]-1)});
+    demoTaskLogs.push({id:lid++,date,elementId:1003,elementName:'Varillas',taskDefId:3006,taskName:'Cortar',shift:'tarde',qty:qT[i]});
+  });
+  const demoWeeklyStaff=[];
+  const usedWeeks=new Set();
+  workDays.forEach(date=>{const {week,year}=getWeekNum(date);const k=`${year}-${week}`;if(!usedWeeks.has(k)){usedWeeks.add(k);demoWeeklyStaff.push({id:5000+demoWeeklyStaff.length,week,year,mañana:8+demoWeeklyStaff.length,tarde:6+demoWeeklyStaff.length});}});
+  demoWeeklyStaff.sort((a,b)=>a.year!==b.year?a.year-b.year:a.week-b.week);
+
+  const demoBlock={
+    'F01B':{status:'wip',tasks:[
+      {id:9001,name:'Armado de estructura',total:50,logs:[{id:9101,date:workDays[0],qty:8},{id:9102,date:workDays[1],qty:9},{id:9103,date:workDays[2],qty:7}]},
+      {id:9002,name:'Instalación de candeleros',total:20,logs:[{id:9104,date:workDays[3],qty:5},{id:9105,date:workDays[4],qty:6}]}
+    ]},
+    'F02B':{status:'none',tasks:[{id:9003,name:'Armado de estructura',total:50,logs:[]}]},
+    'F01E':{status:'done',tasks:[{id:9004,name:'Armado completo',total:30,logs:[{id:9106,date:workDays[0],qty:15},{id:9107,date:workDays[1],qty:15}]}]},
+  };
+
+  elements=demoElements;taskDefs=demoTaskDefs;taskLogs=demoTaskLogs;weeklyStaff=demoWeeklyStaff;
+  await saveElements();await saveTaskDefs();await saveTaskLogs();await saveWeeklyStaff();
+  for(const [id,data] of Object.entries(demoBlock)){blockData[id]=data;await saveBlock(id);}
+  toast('Datos de demo cargados. ¡Ya podés explorar la app!');
+}
+
+// ── Render principal ──────────────────────────────────────────────
 function render(){
   const gp=gProg();
   const blbRow=blockList.filter(id=>id.endsWith('B')&&!id.startsWith('VO'));
@@ -404,32 +591,33 @@ function render(){
     </header>
     <nav class="nav">
       <button class="nav-btn ${view==='mapa'?'active':''}"       onclick="setNav('mapa')">Mapa</button>
-      <button class="nav-btn ${view==='elementos'?'active':''}"  onclick="setNav('elementos')">Avance total</button>
-      <button class="nav-btn ${view==='dashboard'?'active':''}"  onclick="setNav('dashboard')">Dashboard</button>
-      ${isEditor?`
-        <button class="nav-btn ${view==='cargar'?'active':''}"   onclick="setNav('cargar')">Cargar avance</button>
-        <button class="nav-btn ${view==='admin'?'active':''}"    onclick="setNav('admin')">Admin</button>`:''}
+      <button class="nav-btn ${view==='avance'?'active':''}"     onclick="setNav('avance')">Avance total</button>
+      <button class="nav-btn ${view==='term'?'active':''}"       onclick="setNav('term')">Elementos terminados</button>
+      <button class="nav-btn ${view==='tareas'?'active':''}"     onclick="setNav('tareas')">Tareas por elemento</button>
+      <button class="nav-btn ${view==='registro'?'active':''}"   onclick="setNav('registro')">Registro de avance total</button>
+      ${isEditor?`<button class="nav-btn ${view==='admin'?'active':''}" onclick="setNav('admin')">Admin</button>`:''}
     </nav>
     <main class="main">
       ${toastInfo?`<div class="toast ${toastInfo.type}">${esc(toastInfo.msg)}</div>`:''}
-      ${view==='mapa'      ?rMapa(gp,blbRow,bleRow,bows[0]||null,bows[1]||null):''}
-      ${view==='elementos' ?rElementos():''}
-      ${view==='dashboard' ?rDash(gp):''}
-      ${view==='cargar'&&isEditor?rCargar():''}
-      ${view==='admin' &&isEditor?rAdmin():''}
+      ${view==='mapa'     ?rMapa(gp,blbRow,bleRow,bows[0]||null,bows[1]||null):''}
+      ${view==='avance'   ?rAvanceTotal():''}
+      ${view==='term'     ?rElementosTerminados():''}
+      ${view==='tareas'   ?rTareasPorElemento():''}
+      ${view==='registro' ?rRegistroAvance(gp):''}
+      ${view==='admin'&&isEditor?rAdmin():''}
     </main>`;
 }
 
-// ── Vistas ────────────────────────────────────────────────────────
+// ── MAPA ──────────────────────────────────────────────────────────
 function rMapa(gp,blbRow,bleRow,leftBow,rightBow){
   const nWip=blockList.filter(id=>blockData[id]?.status==='wip').length;
   const nDone=blockList.filter(id=>blockData[id]?.status==='done').length;
-  return `
+  return`
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-label">Avance global</div><div class="stat-value">${gp.pct}%</div><div class="stat-sub">${gp.done} / ${gp.total} unidades</div></div>
-      <div class="stat-card"><div class="stat-label">En proceso</div><div class="stat-value" style="color:#633806">${nWip}</div><div class="stat-sub">bloques activos</div></div>
+      <div class="stat-card"><div class="stat-label">Avance global</div><div class="stat-value">${gp.pct}%</div><div class="stat-sub">${gp.done} / ${gp.total} u.</div></div>
+      <div class="stat-card"><div class="stat-label">En proceso</div><div class="stat-value" style="color:#633806">${nWip}</div><div class="stat-sub">bloques</div></div>
       <div class="stat-card"><div class="stat-label">Terminados</div><div class="stat-value" style="color:#27500A">${nDone}</div><div class="stat-sub">de ${blockList.length} bloques</div></div>
-      <div class="stat-card"><div class="stat-label">Cargado hoy</div><div class="stat-value">${todayUnits()}</div><div class="stat-sub">unidades</div></div>
+      <div class="stat-card"><div class="stat-label">Terminados hoy</div><div class="stat-value">${todayTerminados()}</div><div class="stat-sub">elementos</div></div>
     </div>
     <div class="prog-wrap">
       <div class="prog-top"><span class="prog-lbl">Progreso global de producción</span><span class="prog-pct">${gp.pct}%</span></div>
@@ -452,22 +640,18 @@ function rShip(blbRow,bleRow,leftBow,rightBow){
   const sp=`<div style="width:48px;flex-shrink:0;visibility:hidden"></div>`;
   return`<div class="ship-wrap">
     <div class="ship-lbl">Vista de cubierta — popa → proa</div>
-    <div class="deck-row">
-      <div class="row-lbl">Bab.</div>
+    <div class="deck-row"><div class="row-lbl">Bab.</div>
       ${leftBow?`<div style="margin-right:4px">${blk(leftBow,true)}</div>`:''}
       <div class="blocks-row">${blbRow.map(id=>blk(id,false)).join('')}</div>
       ${rightBow?`<div style="margin-left:4px">${blk(rightBow,true)}</div>`:''}
     </div>
     <div class="centerline"></div>
-    <div class="deck-row">
-      <div class="row-lbl">Estr.</div>
+    <div class="deck-row"><div class="row-lbl">Estr.</div>
       ${leftBow?`<div style="margin-right:4px">${sp}</div>`:''}
       <div class="blocks-row">${bleRow.map(id=>blk(id,false)).join('')}</div>
       ${rightBow?`<div style="margin-left:4px">${sp}</div>`:''}
     </div>
-    <div class="legend">
-      ${Object.entries(STATUS).map(([,v])=>`<div class="leg-item"><div class="leg-dot" style="background:${v.bg};border-color:${v.bd}"></div>${v.label}</div>`).join('')}
-    </div>
+    <div class="legend">${Object.entries(STATUS).map(([,v])=>`<div class="leg-item"><div class="leg-dot" style="background:${v.bg};border-color:${v.bd}"></div>${v.label}</div>`).join('')}</div>
   </div>`;
 }
 
@@ -478,7 +662,7 @@ function rPanel(){
       <div class="panel-title-row">
         <div class="panel-title">
           <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${s.bg};border:1px solid ${s.bd};margin-right:7px;vertical-align:middle"></span>
-          Bloque ${esc(id)} — ${p.pct}% &nbsp;(${p.done}/${p.total} u.)
+          Bloque ${esc(id)} — ${p.pct}% (${p.done}/${p.total} u.)
         </div>
         <button class="panel-close" onclick="closePanel()">×</button>
       </div>
@@ -494,22 +678,22 @@ function rPanel(){
       <button class="subtab ${bTab==='hist'?'active':''}"  onclick="setBTab('hist')">Historial</button>
     </div>
     <div class="panel-body">
-      ${bTab==='tasks'?rTasks(id):''}
-      ${bTab==='mats' ?rMats(id) :''}
-      ${bTab==='add'  &&isEditor?rAddTask():''}
-      ${bTab==='log'  &&isEditor?rLogAdv(id):''}
-      ${bTab==='hist' ?rHist(id) :''}
+      ${bTab==='tasks'            ?rPanelTasks(id):''}
+      ${bTab==='mats'             ?rMats(id):''}
+      ${bTab==='add'  &&isEditor  ?rAddTask():''}
+      ${bTab==='log'  &&isEditor  ?rLogAdv(id):''}
+      ${bTab==='hist'             ?rPanelHist(id):''}
     </div>
   </div>`;
 }
 
-function rTasks(id){
+function rPanelTasks(id){
   const tasks=blockData[id]?.tasks||[];
-  if(!tasks.length)return`<div class="empty">Sin tareas definidas.${isEditor?' Usá la pestaña "+ Tarea".':''}</div>`;
+  if(!tasks.length)return`<div class="empty">Sin tareas.${isEditor?' Usá la pestaña "+ Tarea".':''}</div>`;
   return tasks.map(t=>{
     const done=tDone(t),pct=tPct(t),rem=Math.max(0,t.total-done);
     return`<div class="task-row">
-      <div class="task-info"><div class="task-name">${esc(t.name)}</div><div class="task-sub">${done} / ${t.total} hechos — faltan ${rem}</div></div>
+      <div class="task-info"><div class="task-name">${esc(t.name)}</div><div class="task-sub">${done} / ${t.total} — faltan ${rem}</div></div>
       <div class="task-prog"><div class="task-bar"><div class="task-fill" style="width:${pct}%"></div></div><div class="task-pct">${pct}%</div></div>
       ${isEditor?`<button class="del-btn" onclick="deleteTask('${id}',${t.id})">×</button>`:''}
     </div>`;
@@ -518,68 +702,62 @@ function rTasks(id){
 
 function rMats(id){
   const withQty=elements.map(e=>({e,qty:blockAssigned(id,e.id)})).filter(({qty})=>qty>0);
-  const matList=withQty.length
+  const list=withQty.length
     ?withQty.map(({e,qty})=>`<div class="task-row">
         <div class="task-info"><div class="task-name">${esc(e.name)}</div>
-        <div class="task-sub" style="color:${eAvail(e)>0?'#27500A':'#633806'}">Stock disponible: <strong>${eAvail(e)}</strong> u. &nbsp;|&nbsp; Total producido: ${eProd(e)}</div></div>
-        <div style="font-size:16px;font-weight:500;min-width:60px;text-align:right">${qty} u.</div>
+        <div class="task-sub">Stock disponible: <strong style="color:${eAvail(e)>0?'#27500A':'#888780'}">${eAvail(e)}</strong></div></div>
+        <div style="font-size:16px;font-weight:500;min-width:55px;text-align:right">${qty} u.</div>
       </div>`).join('')
-    :`<div class="empty" style="margin-bottom:12px">Sin materiales asignados a este bloque todavía.</div>`;
-
-  const assignForm=isEditor&&elements.length?`
-    <div class="section-title" style="margin-top:14px;padding-top:12px;border-top:.5px solid #dddcd6">Asignar material desde stock</div>
-    <div class="form-grid-3" style="margin-bottom:8px">
-      <div class="form-group" style="margin:0">
-        <label class="form-label">Elemento</label>
-        <select class="form-input" id="bp-elem">
-          <option value="">— Seleccioná —</option>
-          ${elements.map(e=>`<option value="${e.id}">${esc(e.name)} (stock: ${eAvail(e)})</option>`).join('')}
-        </select>
-      </div>
+    :`<div class="empty" style="margin-bottom:12px">Sin materiales asignados.</div>`;
+  const form=isEditor&&elements.length?`
+    <div class="section-title" style="margin-top:14px;padding-top:12px;border-top:.5px solid #dddcd6">Asignar desde stock</div>
+    <div class="form-grid-3">
+      <div class="form-group" style="margin:0"><label class="form-label">Elemento</label>
+        <select class="form-input" id="bp-elem"><option value="">—</option>
+          ${elements.map(e=>`<option value="${e.id}">${esc(e.name)} (disp: ${eAvail(e)})</option>`).join('')}
+        </select></div>
       <div class="form-group" style="margin:0"><label class="form-label">Cantidad</label><input class="form-input" type="number" id="bp-qty" placeholder="0" min="1"></div>
       <div class="form-group" style="margin:0;display:flex;align-items:flex-end"><button class="btn-primary" style="margin:0" onclick="assignFromPanel()">Asignar</button></div>
-    </div>`
-    :isEditor&&!elements.length?`<div class="empty" style="margin-top:12px">No hay elementos en el sistema. Creálos en "Avance total".</div>`:'' ;
-
-  return matList+assignForm;
+    </div>`:'';
+  return list+form;
 }
 
 function rAddTask(){
   return`<div class="form-grid-2">
-    <div class="form-group"><label class="form-label">Nombre del trabajo</label><input class="form-input" id="nt-name" placeholder="Ej: Construcción de candeleros" onkeydown="if(event.key==='Enter')document.getElementById('nt-total').focus()"></div>
-    <div class="form-group"><label class="form-label">Total de unidades</label><input class="form-input" type="number" id="nt-total" placeholder="Ej: 80" min="1" onkeydown="if(event.key==='Enter')addTask()"></div>
+    <div class="form-group"><label class="form-label">Nombre</label><input class="form-input" id="nt-name" placeholder="Ej: Armado de estructura" onkeydown="if(event.key==='Enter')document.getElementById('nt-total').focus()"></div>
+    <div class="form-group"><label class="form-label">Total de unidades</label><input class="form-input" type="number" id="nt-total" placeholder="Ej: 50" min="1" onkeydown="if(event.key==='Enter')addTask()"></div>
   </div>
-  <button class="btn-primary" onclick="addTask()">Agregar tarea al bloque</button>`;
+  <button class="btn-primary" onclick="addTask()">Agregar tarea</button>`;
 }
 
 function rLogAdv(id){
   const tasks=blockData[id]?.tasks||[];
-  if(!tasks.length)return`<div class="empty">Primero agregá tareas desde la pestaña "+ Tarea".</div>`;
+  if(!tasks.length)return`<div class="empty">Primero agregá tareas.</div>`;
   return`<div class="form-group" style="margin-bottom:12px"><label class="form-label">Fecha</label><input class="form-input" type="date" id="log-date" value="${todayStr()}" style="max-width:200px"></div>
-    <div class="section-title">Unidades producidas en el día</div>
+    <div class="section-title">Unidades del día</div>
     ${tasks.map(t=>{const done=tDone(t),rem=Math.max(0,t.total-done);return`<div class="log-row">
-      <div class="log-info"><div class="log-name">${esc(t.name)}</div><div class="log-sub">${tPct(t)}% — ${done}/${t.total}, restan ${rem}</div></div>
-      <input class="log-qty" type="number" id="lq-${t.id}" placeholder="0" min="0" max="${rem}">
+      <div class="log-info"><div class="log-name">${esc(t.name)}</div><div class="log-sub">${tPct(t)}% — restan ${rem}</div></div>
+      <input class="log-qty" type="number" id="lq-${t.id}" placeholder="0" min="0">
     </div>`;}).join('')}
-    <button class="btn-primary" onclick="submitLog()">Guardar avance del día</button>`;
+    <button class="btn-primary" onclick="submitLog()">Guardar avance</button>`;
 }
 
-function rHist(id){
+function rPanelHist(id){
   const tasks=blockData[id]?.tasks||[];
-  if(!tasks.length)return`<div class="empty">Sin tareas definidas.</div>`;
+  if(!tasks.length)return`<div class="empty">Sin tareas.</div>`;
   const allDates=new Set();tasks.forEach(t=>(t.logs||[]).forEach(l=>allDates.add(l.date)));
   const dates=[...allDates].sort().reverse();
   if(!dates.length)return`<div class="empty">Sin registros todavía.</div>`;
   return dates.map(date=>{
     const entries=tasks.map(t=>{const log=(t.logs||[]).find(l=>l.date===date);return log&&log.qty?{name:t.name,qty:log.qty}:null;}).filter(Boolean);
     if(!entries.length)return'';
-    return`<div class="hist-group"><div class="hist-header"><span>${date}</span><span>${entries.reduce((s,e)=>s+e.qty,0)} u. totales</span></div>
-      ${entries.map(e=>`<div class="hist-row"><span>${esc(e.name)}</span><span style="color:#1a1a18;font-weight:500">+${e.qty} u.</span></div>`).join('')}</div>`;
+    return`<div class="hist-group"><div class="hist-header"><span>${date}</span><span>${entries.reduce((s,e)=>s+e.qty,0)} u.</span></div>
+      ${entries.map(e=>`<div class="hist-row"><span>${esc(e.name)}</span><span style="color:#1a1a18;font-weight:500">+${e.qty}</span></div>`).join('')}</div>`;
   }).join('');
 }
 
-// ── Avance total (Elementos) ──────────────────────────────────────
-function rElementos(){
+// ── AVANCE TOTAL ──────────────────────────────────────────────────
+function rAvanceTotal(){
   const gep=elemGlobalProg();
   const totAsig=elements.reduce((s,e)=>s+eAssigned(e),0);
   const totAvail=elements.reduce((s,e)=>s+eAvail(e),0);
@@ -587,51 +765,40 @@ function rElementos(){
     <div class="stats-grid">
       <div class="stat-card"><div class="stat-label">Avance producción</div><div class="stat-value">${gep.pct}%</div><div class="stat-sub">${gep.prod} / ${gep.total} u.</div></div>
       <div class="stat-card"><div class="stat-label">Tipos de elemento</div><div class="stat-value">${elements.length}</div><div class="stat-sub">definidos</div></div>
-      <div class="stat-card"><div class="stat-label">Asignados a bloques</div><div class="stat-value" style="color:#185FA5">${totAsig}</div><div class="stat-sub">unidades</div></div>
+      <div class="stat-card"><div class="stat-label">Asignados</div><div class="stat-value" style="color:#185FA5">${totAsig}</div><div class="stat-sub">a bloques</div></div>
       <div class="stat-card"><div class="stat-label">Stock disponible</div><div class="stat-value" style="color:#27500A">${totAvail}</div><div class="stat-sub">sin asignar</div></div>
     </div>
     <div class="tab-header">
       <button class="subtab ${eTab==='stock'?'active':''}"  onclick="setETab('stock')">Stock por elemento</button>
       <button class="subtab ${eTab==='asign'?'active':''}"  onclick="setETab('asign')">Asignaciones por bloque</button>
-      ${isEditor?`
-        <button class="subtab ${eTab==='prod'?'active':''}"  onclick="setETab('prod')">Cargar producción</button>
-        <button class="subtab ${eTab==='addel'?'active':''}" onclick="setETab('addel')">+ Elemento</button>`:''}
+      ${isEditor?`<button class="subtab ${eTab==='addel'?'active':''}" onclick="setETab('addel')">+ Elemento</button>`:''}
     </div>
     <div class="tab-panel">
       ${eTab==='stock'            ?rElemStock():''}
       ${eTab==='asign'            ?rElemAsign():''}
-      ${eTab==='prod'  &&isEditor ?rElemProd() :''}
-      ${eTab==='addel' &&isEditor ?rElemAdd()  :''}
+      ${eTab==='addel'&&isEditor  ?rElemAdd():''}
     </div>`;
 }
 
 function rElemStock(){
-  if(!elements.length)return`<div class="empty">No hay elementos definidos.${isEditor?' Usá la pestaña "+ Elemento".':''}</div>`;
+  if(!elements.length)return`<div class="empty">No hay elementos.${isEditor?' Usá la pestaña "+ Elemento".':''}</div>`;
   return elements.map(e=>{
     const prod=eProd(e),asig=eAssigned(e),avail=eAvail(e),pct=ePct(e);
     const apct=e.total?Math.min(100,Math.round(asig/e.total*100)):0;
-    const stockTag=avail>0?`<span class="stock-ok">${avail} en stock</span>`:prod>0?`<span class="stock-warn">Stock agotado</span>`:`<span class="stock-none">Sin producción</span>`;
+    const tag=avail>0?`<span class="stock-ok">${avail} disponibles</span>`:prod>0?`<span class="stock-warn">Stock agotado</span>`:`<span class="stock-none">Sin producción</span>`;
     return`<div class="elem-card">
-      <div class="elem-top">
-        <div class="elem-name">${esc(e.name)}</div>
-        <div style="display:flex;align-items:center;gap:6px">
-          ${stockTag}
-          ${isEditor?`<button class="del-btn" style="font-size:14px" onclick="deleteElement(${e.id})">×</button>`:''}
-        </div>
+      <div class="elem-top"><div class="elem-name">${esc(e.name)}</div>
+        <div style="display:flex;gap:6px;align-items:center">${tag}${isEditor?`<button class="del-btn" onclick="deleteElement(${e.id})">×</button>`:''}</div>
       </div>
       <div class="elem-nums">
-        <div class="en-item"><div class="en-lbl">Necesario</div><div class="en-val">${e.total}</div><div class="en-sub">para el proyecto</div></div>
-        <div class="en-item"><div class="en-lbl">Producido</div><div class="en-val" style="color:#3B6D11">${prod}</div><div class="en-sub">${pct}% del total</div></div>
-        <div class="en-item"><div class="en-lbl">Asignado</div><div class="en-val" style="color:#185FA5">${asig}</div><div class="en-sub">a bloques</div></div>
-        <div class="en-item"><div class="en-lbl">Disponible</div><div class="en-val" style="color:${avail>0?'#27500A':'#888780'}">${avail}</div><div class="en-sub">en stock</div></div>
-      </div>
-      <div style="margin-bottom:4px;font-size:9px;color:#888780;display:flex;gap:12px">
-        <span><span style="display:inline-block;width:8px;height:8px;background:#97C459;border-radius:1px;margin-right:3px"></span>Producido ${pct}%</span>
-        <span><span style="display:inline-block;width:8px;height:8px;background:#378ADD;border-radius:1px;margin-right:3px"></span>Asignado ${apct}%</span>
+        <div class="en-item"><div class="en-lbl">Necesario</div><div class="en-val">${e.total}</div></div>
+        <div class="en-item"><div class="en-lbl">Producido</div><div class="en-val" style="color:#3B6D11">${prod}</div></div>
+        <div class="en-item"><div class="en-lbl">Asignado</div><div class="en-val" style="color:#185FA5">${asig}</div></div>
+        <div class="en-item"><div class="en-lbl">Disponible</div><div class="en-val" style="color:${avail>0?'#27500A':'#888780'}">${avail}</div></div>
       </div>
       <div style="position:relative;height:5px;background:#dddcd6;border-radius:3px;overflow:hidden">
         <div style="position:absolute;inset:0;width:${pct}%;background:#97C459"></div>
-        <div style="position:absolute;inset:0;width:${apct}%;background:rgba(55,138,221,0.6)"></div>
+        <div style="position:absolute;inset:0;width:${apct}%;background:rgba(55,138,221,.55)"></div>
       </div>
     </div>`;
   }).join('');
@@ -640,116 +807,294 @@ function rElemStock(){
 function rElemAsign(){
   if(!elements.length)return`<div class="empty">No hay elementos definidos.</div>`;
   const hasA=elements.some(e=>(e.assignments||[]).length>0);
-  if(!hasA)return`<div class="empty">Sin asignaciones todavía. Abrí un bloque en el Mapa → Materiales → Asignar.</div>`;
+  if(!hasA)return`<div class="empty">Sin asignaciones. Abrí un bloque → Materiales → Asignar.</div>`;
   const byBlock={};
-  elements.forEach(e=>{(e.assignments||[]).forEach((a,idx)=>{if(!byBlock[a.blockId])byBlock[a.blockId]=[];byBlock[a.blockId].push({eid:e.id,ename:e.name,qty:a.qty,date:a.date,idx});});});
+  elements.forEach(e=>{(e.assignments||[]).forEach(a=>{if(!byBlock[a.blockId])byBlock[a.blockId]=[];byBlock[a.blockId].push({eid:e.id,aid:a.id,ename:e.name,qty:a.qty,date:a.date});});});
   return Object.entries(byBlock).sort(([a],[b])=>a.localeCompare(b)).map(([blockId,items])=>{
     const total=items.reduce((s,x)=>s+x.qty,0);
-    return`<div class="hist-group">
-      <div class="hist-header"><span style="font-size:12px;color:#1a1a18;font-weight:500">${blockId}</span><span>${total} u. totales asignadas</span></div>
+    return`<div class="hist-group"><div class="hist-header"><span style="color:#1a1a18;font-size:12px">${blockId}</span><span>${total} u. totales</span></div>
       ${items.map(x=>`<div class="hist-row">
         <span>${esc(x.ename)}<span style="color:#b8b7b0;margin:0 6px">—</span><span style="color:#888780">${x.date}</span></span>
         <span style="display:flex;align-items:center;gap:8px">
           <span style="color:#1a1a18;font-weight:500">${x.qty} u.</span>
-          ${isEditor?`<button class="del-btn" style="font-size:13px" onclick="removeAssignment(${x.eid},${x.idx})">×</button>`:''}
+          ${isEditor?`<button class="del-btn" onclick="removeAssignment(${x.eid},'${x.aid}')">×</button>`:''}
         </span>
-      </div>`).join('')}
-    </div>`;
+      </div>`).join('')}</div>`;
   }).join('');
-}
-
-function rElemProd(){
-  if(!elements.length)return`<div class="empty">Primero agregá elementos en la pestaña "+ Elemento".</div>`;
-  return`<div class="form-group" style="margin-bottom:12px"><label class="form-label">Fecha de producción</label><input class="form-input" type="date" id="el-date" value="${todayStr()}" style="max-width:200px"></div>
-    <div class="section-title">Unidades producidas en el día</div>
-    ${elements.map(e=>{const prod=eProd(e),pct=ePct(e),rem=Math.max(0,e.total-prod);return`<div class="log-row">
-      <div class="log-info"><div class="log-name">${esc(e.name)}</div><div class="log-sub">${pct}% — ${prod}/${e.total} — faltan ${rem} — stock actual: ${eAvail(e)}</div></div>
-      <input class="log-qty" type="number" id="eq-${e.id}" placeholder="0" min="0">
-    </div>`;}).join('')}
-    <button class="btn-primary" onclick="submitElemLog()">Guardar producción del día</button>`;
 }
 
 function rElemAdd(){
   return`<div class="form-grid-2">
-    <div class="form-group"><label class="form-label">Nombre del elemento</label><input class="form-input" id="en-name" placeholder="Ej: Caños, Candeleros, Varillas..." onkeydown="if(event.key==='Enter')document.getElementById('en-total').focus()"></div>
-    <div class="form-group"><label class="form-label">Total necesario para el proyecto</label><input class="form-input" type="number" id="en-total" placeholder="Ej: 100" min="1" onkeydown="if(event.key==='Enter')addElement()"></div>
+    <div class="form-group"><label class="form-label">Nombre del elemento</label><input class="form-input" id="en-name" placeholder="Ej: Candeleros, Caños, Varillas..." onkeydown="if(event.key==='Enter')document.getElementById('en-total').focus()"></div>
+    <div class="form-group"><label class="form-label">Total necesario (proyecto)</label><input class="form-input" type="number" id="en-total" placeholder="Ej: 100" min="1" onkeydown="if(event.key==='Enter')addElement()"></div>
   </div>
   <button class="btn-primary" onclick="addElement()">Agregar elemento</button>
-  ${elements.length?`<div style="margin-top:14px;border-top:.5px solid #dddcd6;padding-top:12px"><div class="section-title">Elementos cargados</div>
+  ${elements.length?`<div style="margin-top:14px;border-top:.5px solid #dddcd6;padding-top:12px"><div class="section-title">Elementos existentes</div>
     ${elements.map(e=>`<div style="display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:.5px solid #f0efd8;font-size:13px">
-      <span>${esc(e.name)}</span>
-      <span style="color:#888780">Necesario: ${e.total} &nbsp;|&nbsp; Producido: ${eProd(e)} &nbsp;|&nbsp; Stock: ${eAvail(e)}</span>
-    </div>`).join('')}</div>`:''}`;
+      <span>${esc(e.name)}</span><span style="color:#888780">Total: ${e.total} — Producido: ${eProd(e)}</span></div>`).join('')}</div>`:''}`;
 }
 
-// ── Dashboard ─────────────────────────────────────────────────────
-function rDash(gp){
-  const daily=dailyData(),proj=projFinish(),avg=avgDaily(),hoy=todayUnits();
-  const nDone=blockList.filter(id=>blockData[id]?.status==='done').length;
-  const last14=daily.slice(-14);
-  const chartHTML=last14.length?`
-    <div class="section-title" style="margin-bottom:8px">Producción diaria — últimos ${last14.length} días</div>
-    <div class="chart-bars">${last14.map(([d,v])=>{const maxV=Math.max(...last14.map(([,v])=>v),1);const h=Math.max(4,Math.round(v/maxV*80));return`<div class="chart-bar" style="height:${h}px" title="${d}: ${v} u."></div>`;}).join('')}</div>
-    <div class="chart-dates">${last14.map(([d])=>`<div class="chart-date">${d.slice(5)}</div>`).join('')}</div>`
-    :`<div class="empty">Sin datos de producción todavía.</div>`;
-  const rows=blockList.map(id=>{
-    const b=blockData[id]||{status:'none',tasks:[]},p=bProg(id),s=STATUS[b.status]||STATUS.none;
-    return`<tr><td><span style="display:inline-flex;align-items:center;gap:6px"><span style="width:8px;height:8px;border-radius:2px;background:${s.bg};border:1px solid ${s.bd};flex-shrink:0;display:inline-block"></span>${id}</span></td>
-      <td>${b.tasks?.length||0}</td>
-      <td><div class="pcell"><div class="pbar"><div class="pfill" style="width:${p.pct}%"></div></div><span class="pnum">${p.pct}%</span></div></td>
-      <td style="white-space:nowrap">${p.done} / ${p.total}</td>
-      <td><span style="font-size:10px;padding:2px 7px;border-radius:4px;background:${s.bg};color:${s.tx};border:1px solid ${s.bd};white-space:nowrap">${s.label}</span></td></tr>`;
+// ── ELEMENTOS TERMINADOS ──────────────────────────────────────────
+function rElementosTerminados(){
+  const allLogs=[];
+  elements.forEach(e=>(e.logs||[]).forEach(l=>allLogs.push({eid:e.id,ename:e.name,lid:l.id,date:l.date,qty:l.qty})));
+  allLogs.sort((a,b)=>b.date.localeCompare(a.date));
+
+  const addForm=isEditor?`<div class="card">
+    <div class="card-title">Registrar elementos terminados</div>
+    <div class="form-grid-3" style="margin-bottom:8px">
+      <div class="form-group" style="margin:0"><label class="form-label">Elemento</label>
+        <select class="form-input" id="term-elem"><option value="">— Seleccioná —</option>
+          ${elements.map(e=>`<option value="${e.id}">${esc(e.name)}</option>`).join('')}
+        </select></div>
+      <div class="form-group" style="margin:0"><label class="form-label">Fecha</label><input class="form-input" type="date" id="term-date" value="${todayStr()}"></div>
+      <div class="form-group" style="margin:0"><label class="form-label">Cantidad</label><input class="form-input" type="number" id="term-qty" placeholder="Ej: 8" min="1" onkeydown="if(event.key==='Enter')addTerminado()"></div>
+    </div>
+    <button class="btn-primary" onclick="addTerminado()">Registrar</button>
+    ${!elements.length?`<div class="empty" style="margin-top:10px">Primero creá elementos en "Avance total" → "+ Elemento".</div>`:''}
+  </div>`:'';
+
+  const listHTML=allLogs.length?`<div class="card">
+    <div class="card-title">Historial de elementos terminados (${allLogs.length} registros)</div>
+    ${allLogs.map(log=>{
+      const editing=editingTermId===`${log.eid}_${log.lid}`;
+      return`<div class="log-row">
+        <div class="log-info"><div class="log-name">${esc(log.ename)}</div><div class="log-sub">${log.date}</div></div>
+        ${editing?`
+          <input class="inline-input" type="number" id="term-edit-qty" value="${log.qty}" min="1" onkeydown="if(event.key==='Enter')saveTerminado(${log.eid},${log.lid})">
+          <button class="save-btn" onclick="saveTerminado(${log.eid},${log.lid})">Guardar</button>
+          <button class="cancel-btn" onclick="cancelEditTerm()">Cancelar</button>`
+        :`<span style="font-size:16px;font-weight:500;min-width:55px;text-align:right">${log.qty} u.</span>
+          ${isEditor?`<button class="edit-btn" onclick="editTerminado(${log.eid},${log.lid})">Editar</button>
+          <button class="del-btn" onclick="deleteTerminado(${log.eid},${log.lid})">×</button>`:''}`}
+      </div>`;
+    }).join('')}
+  </div>`:`<div class="empty">Sin registros todavía.${isEditor?' Usá el formulario de arriba.':''}</div>`;
+
+  return addForm+listHTML;
+}
+
+// ── TAREAS POR ELEMENTO ───────────────────────────────────────────
+function rTareasPorElemento(){
+  return`
+    <div class="tab-header">
+      <button class="subtab ${tpTab==='defs'?'active':''}"    onclick="setTpTab('defs')">Definir tareas</button>
+      <button class="subtab ${tpTab==='hist'?'active':''}"    onclick="setTpTab('hist')">Historial de avance</button>
+      <button class="subtab ${tpTab==='staff'?'active':''}"   onclick="setTpTab('staff')">Operarios por semana</button>
+      ${isEditor?`<button class="subtab ${tpTab==='cargar'?'active':''}" onclick="setTpTab('cargar')">Cargar avance</button>`:''}
+    </div>
+    <div class="tab-panel">
+      ${tpTab==='defs'                ?rTpDefs():''}
+      ${tpTab==='hist'                ?rTpHist():''}
+      ${tpTab==='staff'               ?rTpStaff():''}
+      ${tpTab==='cargar'&&isEditor    ?rTpCargar():''}
+    </div>`;
+}
+
+function rTpDefs(){
+  const grouped={};
+  elements.forEach(e=>{grouped[e.id]={ename:e.name,tasks:taskDefs.filter(d=>d.elementId===e.id)};});
+  const addForm=isEditor&&elements.length?`<div style="margin-bottom:16px">
+    <div class="section-title">Agregar nueva tarea</div>
+    <div class="form-grid-3">
+      <div class="form-group" style="margin:0"><label class="form-label">Elemento</label>
+        <select class="form-input" id="td-elem"><option value="">—</option>
+          ${elements.map(e=>`<option value="${e.id}">${esc(e.name)}</option>`).join('')}
+        </select></div>
+      <div class="form-group" style="margin:0"><label class="form-label">Nombre de la tarea</label><input class="form-input" id="td-name" placeholder="Ej: Cortar, Trazar, Amolar..." onkeydown="if(event.key==='Enter')addTaskDef()"></div>
+      <div class="form-group" style="margin:0;display:flex;align-items:flex-end"><button class="btn-primary" style="margin:0" onclick="addTaskDef()">Agregar</button></div>
+    </div></div>`:!elements.length?`<div class="empty" style="margin-bottom:14px">Primero creá elementos en "Avance total".</div>`:'';
+
+  const list=Object.values(grouped).map(({ename,tasks})=>{
+    if(!tasks.length)return`<div style="margin-bottom:12px"><div class="section-title">${esc(ename)}</div><div style="font-size:12px;color:#888780;padding:6px 0">Sin tareas definidas.</div></div>`;
+    return`<div style="margin-bottom:14px">
+      <div class="section-title">${esc(ename)}</div>
+      ${tasks.map(d=>`<div class="task-row" style="padding:7px 10px">
+        <div class="task-info"><div class="task-name">${esc(d.name)}</div></div>
+        ${isEditor?`<button class="del-btn" onclick="deleteTaskDef(${d.id})">×</button>`:''}
+      </div>`).join('')}
+    </div>`;
   }).join('');
+
+  return addForm+(list||`<div class="empty">Sin tareas definidas.</div>`);
+}
+
+function rTpCargar(){
+  return`<div class="form-grid-4" style="margin-bottom:8px">
+    <div class="form-group" style="margin:0"><label class="form-label">Elemento</label>
+      <select class="form-input" id="tl-elem" onchange="updateTaskSelect()"><option value="">—</option>
+        ${elements.map(e=>`<option value="${e.id}">${esc(e.name)}</option>`).join('')}
+      </select></div>
+    <div class="form-group" style="margin:0"><label class="form-label">Tarea</label>
+      <select class="form-input" id="tl-task"><option value="">— Primero elegí elemento —</option></select></div>
+    <div class="form-group" style="margin:0"><label class="form-label">Turno</label>
+      <select class="form-input" id="tl-shift"><option value="">—</option><option value="mañana">Turno mañana</option><option value="tarde">Turno tarde</option></select></div>
+    <div class="form-group" style="margin:0"><label class="form-label">Fecha</label><input class="form-input" type="date" id="tl-date" value="${todayStr()}"></div>
+  </div>
+  <div class="form-grid-2">
+    <div class="form-group"><label class="form-label">Cantidad de tareas realizadas</label><input class="form-input" type="number" id="tl-qty" placeholder="Ej: 15" min="1" onkeydown="if(event.key==='Enter')addTaskLog()"></div>
+    <div class="form-group" style="display:flex;align-items:flex-end"><button class="btn-primary" style="margin:0" onclick="addTaskLog()">Registrar</button></div>
+  </div>
+  ${!elements.length?`<div class="empty">Primero creá elementos y definí sus tareas.</div>`:''}`;
+}
+
+function rTpHist(){
+  if(!taskLogs.length)return`<div class="empty">Sin registros de avance.${isEditor?' Usá la pestaña "Cargar avance".':''}</div>`;
+  const sorted=[...taskLogs].sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id);
+  return sorted.map(log=>{
+    const editing=editingTaskLogId===log.id;
+    return`<div class="log-row">
+      <div class="log-info">
+        <div class="log-name">${esc(log.elementName)} — ${esc(log.taskName)}</div>
+        <div class="log-sub">${log.date} &nbsp; <span class="badge ${log.shift==='mañana'?'badge-m':'badge-t'}">Turno ${log.shift}</span></div>
+      </div>
+      ${editing?`
+        <input class="inline-input" type="number" id="tl-edit-qty" value="${log.qty}" min="1" onkeydown="if(event.key==='Enter')saveTaskLog(${log.id})">
+        <button class="save-btn" onclick="saveTaskLog(${log.id})">Guardar</button>
+        <button class="cancel-btn" onclick="cancelEditTaskLog()">Cancelar</button>`
+      :`<span style="font-size:16px;font-weight:500;min-width:55px;text-align:right">${log.qty}</span>
+        ${isEditor?`<button class="edit-btn" onclick="editTaskLog(${log.id})">Editar</button>
+        <button class="del-btn" onclick="deleteTaskLog(${log.id})">×</button>`:''}`}
+    </div>`;
+  }).join('');
+}
+
+function rTpStaff(){
+  const addForm=isEditor?`<div style="margin-bottom:16px">
+    <div class="section-title">Agregar / actualizar semana</div>
+    <div class="form-grid-4" style="margin-bottom:8px">
+      <div class="form-group" style="margin:0"><label class="form-label">N° de semana (1-53)</label><input class="form-input" type="number" id="ws-week" placeholder="Ej: 16" min="1" max="53"></div>
+      <div class="form-group" style="margin:0"><label class="form-label">Año</label><input class="form-input" type="number" id="ws-year" value="${new Date().getFullYear()}" min="2024"></div>
+      <div class="form-group" style="margin:0"><label class="form-label">Operarios mañana</label><input class="form-input" type="number" id="ws-man" placeholder="Ej: 10" min="0"></div>
+      <div class="form-group" style="margin:0"><label class="form-label">Operarios tarde</label><input class="form-input" type="number" id="ws-tar" placeholder="Ej: 8" min="0"></div>
+    </div>
+    <button class="btn-primary" onclick="addWeeklyStaff()">Guardar semana</button>
+  </div>`:'';
+
+  const list=weeklyStaff.length?`
+    <div class="table-wrap"><table class="week-table">
+      <thead><tr><th style="text-align:left">Semana</th><th>Operarios mañana</th><th>Operarios tarde</th><th>Total</th>${isEditor?'<th></th>':''}</tr></thead>
+      <tbody>${[...weeklyStaff].sort((a,b)=>a.year!==b.year?a.year-b.year:a.week-b.week).map(s=>{
+        const editing=editingStaffId===s.id;
+        return`<tr>
+          <td>Semana ${s.week} / ${s.year}</td>
+          ${editing?`
+            <td><input class="inline-input" type="number" id="ws-edit-man" value="${s.mañana}" min="0" style="width:60px"></td>
+            <td><input class="inline-input" type="number" id="ws-edit-tar" value="${s.tarde}" min="0" style="width:60px"></td>
+            <td>${s.mañana+s.tarde}</td>
+            ${isEditor?`<td style="display:flex;gap:5px;justify-content:center">
+              <button class="save-btn" onclick="saveStaff(${s.id})">Guardar</button>
+              <button class="cancel-btn" onclick="cancelEditStaff()">Cancelar</button>
+            </td>`:''}`
+          :`<td>${s.mañana}</td><td>${s.tarde}</td><td style="font-weight:500">${s.mañana+s.tarde}</td>
+            ${isEditor?`<td style="display:flex;gap:5px;justify-content:center">
+              <button class="edit-btn" onclick="editStaff(${s.id})">Editar</button>
+              <button class="del-btn" onclick="deleteStaff(${s.id})">×</button>
+            </td>`:''}`}
+        </tr>`;
+      }).join('')}</tbody>
+    </table></div>`:`<div class="empty">Sin registros de operarios.${isEditor?' Usá el formulario de arriba.':''}</div>`;
+
+  return addForm+list;
+}
+
+// ── REGISTRO DE AVANCE TOTAL (Dashboard) ──────────────────────────
+function rRegistroAvance(gp){
+  const gep=elemGlobalProg();
+  const nDone=blockList.filter(id=>blockData[id]?.status==='done').length;
+  const hoy=todayTerminados();
+  const daily=termByDay();
+  const last14=daily.slice(-14);
+  const weeks=tasksByWeek();
+
+  const elemChart=last14.length?`
+    <div class="card">
+      <div class="card-title">Elementos terminados por día</div>
+      <div style="margin-bottom:6px;display:flex;gap:12px">
+        <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:#888780"><div style="width:8px;height:8px;background:#97C459;border-radius:1px"></div>Unidades terminadas</div>
+      </div>
+      <div class="chart-bars">${last14.map(([d,v])=>{const maxV=Math.max(...last14.map(([,v])=>v),1);const h=Math.max(4,Math.round(v/maxV*80));return`<div class="chart-bar" style="height:${h}px" title="${d}: ${v} u."></div>`;}).join('')}</div>
+      <div class="chart-dates">${last14.map(([d])=>`<div class="chart-date">${d.slice(5)}</div>`).join('')}</div>
+    </div>`:`<div class="empty" style="margin-bottom:14px">Sin datos de producción todavía.</div>`;
+
+  const weekTable=weeks.length?`<div class="card">
+    <div class="card-title">Tareas por semana — por turno</div>
+    <div class="table-wrap"><table class="week-table">
+      <thead><tr><th style="text-align:left">Semana</th><th>Turno mañana</th><th>Turno tarde</th><th>Total tareas</th><th>Oper. mañana</th><th>Oper. tarde</th></tr></thead>
+      <tbody>${weeks.map(w=>{
+        const staff=getStaff(w.week,w.year);
+        return`<tr>
+          <td>Sem. ${w.week} / ${w.year}</td>
+          <td><span class="badge badge-m">${w.mañana}</span></td>
+          <td><span class="badge badge-t">${w.tarde}</span></td>
+          <td style="font-weight:500">${w.mañana+w.tarde}</td>
+          <td>${staff?staff.mañana:'<span style="color:#c0bfb8">—</span>'}</td>
+          <td>${staff?staff.tarde:'<span style="color:#c0bfb8">—</span>'}</td>
+        </tr>`;
+      }).join('')}</tbody>
+    </table></div></div>`:
+    `<div class="empty" style="margin-bottom:14px">Sin datos de tareas por semana.</div>`;
+
+  const elemPct=gep.total?Math.round(gep.prod/gep.total*100):0;
+  const blockRows=blockList.map(id=>{
+    const b=blockData[id]||{status:'none',tasks:[]},p=bProg(id),s=STATUS[b.status]||STATUS.none;
+    return`<tr><td><span style="display:inline-flex;align-items:center;gap:6px">
+      <span style="width:8px;height:8px;border-radius:2px;background:${s.bg};border:1px solid ${s.bd};display:inline-block;flex-shrink:0"></span>${id}</span></td>
+      <td><div class="pcell"><div class="pbar"><div class="pfill" style="width:${p.pct}%"></div></div><span class="pnum">${p.pct}%</span></div></td>
+      <td style="white-space:nowrap">${p.done}/${p.total}</td>
+      <td><span style="font-size:10px;padding:2px 7px;border-radius:4px;background:${s.bg};color:${s.tx};border:1px solid ${s.bd}">${s.label}</span></td></tr>`;
+  }).join('');
+
   return`
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-label">Avance global</div><div class="stat-value">${gp.pct}%</div><div class="stat-sub">${gp.done} / ${gp.total} unidades</div></div>
-      <div class="stat-card"><div class="stat-label">Cargado hoy</div><div class="stat-value">${hoy}</div><div class="stat-sub">unidades</div></div>
-      <div class="stat-card"><div class="stat-label">Promedio diario</div><div class="stat-value">${avg}</div><div class="stat-sub">unidades/día</div></div>
-      <div class="stat-card"><div class="stat-label">Terminados</div><div class="stat-value">${nDone}/${blockList.length}</div><div class="stat-sub">bloques</div></div>
+      <div class="stat-card"><div class="stat-label">Elementos producidos</div><div class="stat-value">${elemPct}%</div><div class="stat-sub">${gep.prod} / ${gep.total} u. necesarias</div></div>
+      <div class="stat-card"><div class="stat-label">Terminados hoy</div><div class="stat-value">${hoy}</div><div class="stat-sub">elementos</div></div>
+      <div class="stat-card"><div class="stat-label">Avance global (bloques)</div><div class="stat-value">${gp.pct}%</div><div class="stat-sub">${gp.done}/${gp.total} u.</div></div>
+      <div class="stat-card"><div class="stat-label">Bloques terminados</div><div class="stat-value" style="color:#27500A">${nDone}/${blockList.length}</div><div class="stat-sub">bloques</div></div>
     </div>
-    <div class="proj-box"><div class="proj-lbl">Proyección de finalización (días hábiles L-V)</div><div class="proj-val">${proj||'Necesitás al menos 2 días registrados para calcular.'}</div></div>
-    <div class="card">${chartHTML}</div>
-    <div class="card"><div class="table-wrap"><table><thead><tr><th>Bloque</th><th>Tareas</th><th>Progreso</th><th>Unidades</th><th>Estado</th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+    ${elemChart}
+    ${weekTable}
+    <div class="card"><div class="card-title">Estado de bloques</div><div class="table-wrap">
+      <table><thead><tr><th>Bloque</th><th>Progreso</th><th>Unidades</th><th>Estado</th></tr></thead>
+      <tbody>${blockRows}</tbody></table>
+    </div></div>`;
 }
 
-function rCargar(){
-  const opts=blockList.map(id=>{const n=blockData[id]?.tasks?.length||0;return`<option value="${id}" ${cargarBId===id?'selected':''}>${id} — ${n} tarea${n!==1?'s':''}</option>`;}).join('');
-  const b=cargarBId?blockData[cargarBId]:null;
-  const taskRows=b?.tasks?.length?b.tasks.map(t=>{const done=tDone(t),rem=Math.max(0,t.total-done);return`<div class="log-row"><div class="log-info"><div class="log-name">${esc(t.name)}</div><div class="log-sub">${tPct(t)}% — ${done}/${t.total}, faltan ${rem}</div></div><input class="log-qty" type="number" id="cq-${t.id}" placeholder="0" min="0"></div>`;}).join(''):'';
-  return`<div class="card"><div class="card-title">Registrar producción del día</div>
-    <div class="form-grid-2" style="margin-bottom:12px">
-      <div class="form-group"><label class="form-label">Bloque</label><select class="form-input" id="car-block" onchange="cargarBId=this.value;render()"><option value="">— Seleccioná un bloque —</option>${opts}</select></div>
-      <div class="form-group"><label class="form-label">Fecha</label><input class="form-input" type="date" id="car-date" value="${todayStr()}"></div>
-    </div>
-    ${b&&b.tasks?.length?`<div class="section-title">Unidades producidas</div>${taskRows}<button class="btn-primary" onclick="submitCargar()">Guardar avance</button>`:b&&!b.tasks?.length?`<div class="empty">Este bloque no tiene tareas.</div>`:''}
-  </div>`;
-}
-
+// ── ADMIN ─────────────────────────────────────────────────────────
 function rAdmin(){
   return`
+    <div class="demo-box">
+      <p>Cargá datos de demo para ver cómo funciona la app con todo completo: 4 elementos (Candeleros, Caños, Varillas, Barandas), 14 días de producción, tareas por turno, operarios por semana y bloques con avance.</p>
+      <button class="btn-demo" onclick="loadDemoData()">Cargar datos de demo</button>
+    </div>
     <div class="card"><div class="card-title">Agregar nuevo bloque</div>
       <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap">
-        <div class="form-group" style="flex:1;min-width:160px;margin:0"><label class="form-label">ID del bloque</label><input class="form-input" id="new-block-id" placeholder="Ej: F09B" style="text-transform:uppercase" onkeydown="if(event.key==='Enter')addBlock()"></div>
+        <div class="form-group" style="flex:1;min-width:160px;margin:0"><label class="form-label">ID del bloque</label>
+          <input class="form-input" id="new-block-id" placeholder="Ej: F09B" style="text-transform:uppercase" onkeydown="if(event.key==='Enter')addBlock()"></div>
         <button class="btn-primary" style="width:auto;padding:9px 20px;margin:0" onclick="addBlock()">Agregar</button>
       </div>
       <div style="font-size:11px;color:#888780;margin-top:10px">Actuales (${blockList.length}): ${blockList.join(', ')}</div>
     </div>
     <div class="card"><div class="card-title">Eliminar bloque</div>
-      <div style="font-size:12px;color:#A32D2D;margin-bottom:12px">Atención: elimina el bloque y todos sus datos.</div>
+      <div style="font-size:12px;color:#A32D2D;margin-bottom:12px">Atención: elimina el bloque y todos sus datos. No se puede deshacer.</div>
       <div style="display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap">
-        <div class="form-group" style="flex:1;min-width:160px;margin:0"><label class="form-label">ID del bloque a eliminar</label><input class="form-input" id="del-block-id" placeholder="Ej: F09B" style="text-transform:uppercase" onkeydown="if(event.key==='Enter')deleteBlock()"></div>
+        <div class="form-group" style="flex:1;min-width:160px;margin:0"><label class="form-label">ID a eliminar</label>
+          <input class="form-input" id="del-block-id" placeholder="Ej: F09B" style="text-transform:uppercase" onkeydown="if(event.key==='Enter')deleteBlock()"></div>
         <button onclick="deleteBlock()" style="padding:9px 20px;font-size:13px;background:#791F1F;color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:inherit;white-space:nowrap">Eliminar</button>
       </div>
     </div>`;
 }
 
+// ── Exponer funciones ─────────────────────────────────────────────
 Object.assign(window,{
   tryLogin,logout,openLogin,closeLogin,
-  setNav,selBlockFn,closePanel,setBTab,setETab,
-  setStatus,addTask,deleteTask,submitLog,submitCargar,
-  addBlock,deleteBlock,
-  addElement,deleteElement,submitElemLog,assignFromPanel,removeAssignment,
-  set cargarBId(v){cargarBId=v;},
+  setNav,selBlockFn,closePanel,setBTab,setETab,setTpTab,
+  setStatus,addTask,deleteTask,submitLog,addBlock,deleteBlock,
+  addElement,deleteElement,assignFromPanel,removeAssignment,
+  addTerminado,editTerminado,cancelEditTerm,saveTerminado,deleteTerminado,
+  addTaskDef,deleteTaskDef,addTaskLog,editTaskLog,cancelEditTaskLog,saveTaskLog,deleteTaskLog,
+  updateTaskSelect,addWeeklyStaff,editStaff,cancelEditStaff,saveStaff,deleteStaff,
+  loadDemoData,
 });
 init();
 </script>
